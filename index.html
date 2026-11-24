@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="ml" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>FARIS TOURS & TRAVELS | Luxury Umrah, Visa, Ticketing & Hospitality</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sapphire: '#071326',
+                        sapphireLight: '#0E2242',
+                        royalGold: '#D4AF37',
+                        champagne: '#F3D88B',
+                        ivory: '#FAF7F0',
+                        alabaster: '#F3EFE4',
+                        emeraldLux: '#0D5C46',
+                        instaLux: '#C13584'
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', '"Noto Sans Malayalam"', '"IBM Plex Sans Arabic"', '"Noto Sans Devanagari"', 'sans-serif'],
+                        display: ['"Cinzel"', '"Inter"', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        /* Luxury surface & gold trim utilities */
+        .lux-hero-bg {
+            background:
+                radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.22), transparent 42%),
+                radial-gradient(circle at 12% 85%, rgba(13, 92, 70, 0.28), transparent 48%),
+                linear-gradient(135deg, #050D1A 0%, #0A1B36 55%, #071326 100%);
+        }
+        .gold-border-glow {
+            box-shadow: 0 12px 35px -10px rgba(212, 175, 55, 0.28), 0 4px 14px -4px rgba(7, 19, 38, 0.12);
+        }
+        .insta-lux-grad {
+            background: linear-gradient(45deg, #F58529 0%, #DD2A7B 52%, #8134AF 100%);
+        }
+        .lang-btn.is-active {
+            background: linear-gradient(135deg, #D4AF37 0%, #B88E1B 100%);
+            color: #071326;
+            font-weight: 800;
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.45);
+        }
+        /* Ensure smooth touch targets across mobile and desktop */
+        button, a, select, input, textarea {
+            touch-action: manipulation;
+        }
+        .modal-backdrop {
+            z-index: 120;
+        }
+        #toast-container {
+            z-index: 150;
+        }
+    </style>
+</head>
+<body class="bg-ivory text-sapphire font-sans antialiased selection:bg-royalGold/30 selection:text-sapphire pb-24 md:pb-10 overflow-x-hidden">
+
+    <!-- Toast Notification Stack -->
+    <div id="toast-container" class="fixed top-20 inset-x-4 sm:inset-x-auto sm:right-6 sm:left-auto flex flex-col gap-2 max-w-md pointer-events-none"></div>
+
+    <!-- Top Luxury Utility Bar -->
+    <div class="bg-sapphire text-champagne text-xs border-b border-royalGold/25">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-2.5">
+            <!-- One-tap direct contact & live location links -->
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3" dir="ltr">
+                <a href="tel:+966544672997" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-royalGold hover:text-sapphire font-bold transition min-h-[34px]">
+                    <i class="fa-solid fa-phone text-royalGold group-hover:text-sapphire"></i>
+                    <span>+966544672997</span>
+                </a>
+                <a href="tel:+917025443638" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-royalGold hover:text-sapphire font-bold transition min-h-[34px]">
+                    <i class="fa-solid fa-phone-volume text-emerald-300"></i>
+                    <span>+917025443638</span>
+                </a>
+                <a href="mailto:fadilshahulm@gmail.com" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-royalGold hover:text-sapphire font-semibold transition min-h-[34px]">
+                    <i class="fa-solid fa-envelope text-champagne"></i>
+                    <span>fadilshahulm@gmail.com</span>
+                </a>
+                <a href="https://maps.app.goo.gl/D35adqW7wdWEdc7b7?g_st=awb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-royalGold/20 hover:bg-royalGold hover:text-sapphire text-champagne font-bold transition min-h-[34px]">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span data-i18n="top_live_loc">Live Location</span>
+                </a>
+            </div>
+
+            <!-- 4-Language Switcher (ML, EN, AR, HI) -->
+            <div class="flex items-center gap-1 bg-sapphireLight p-1 rounded-xl border border-royalGold/30" dir="ltr">
+                <button type="button" data-lang="ml" class="lang-btn px-2.5 py-1 rounded-lg text-[11px] font-bold text-champagne transition min-h-[30px]">മലയാളം</button>
+                <button type="button" data-lang="en" class="lang-btn px-2.5 py-1 rounded-lg text-[11px] font-bold text-champagne transition min-h-[30px]">EN</button>
+                <button type="button" data-lang="ar" class="lang-btn px-2.5 py-1 rounded-lg text-[11px] font-bold text-champagne transition min-h-[30px]">العربية</button>
+                <button type="button" data-lang="hi" class="lang-btn px-2.5 py-1 rounded-lg text-[11px] font-bold text-champagne transition min-h-[30px]">हिन्दी</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Luxury Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-royalGold/30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
+            <!-- Brand Logo + Luxury Admin Emblem Badge -->
+            <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                <a href="#home" class="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white p-1 border-2 border-royalGold shadow-md overflow-hidden shrink-0 flex items-center justify-center">
+                        <img src="image_4611f8.jpg"
+                             onerror="this.onerror=null;this.src='https://placehold.co/120x120/071326/D4AF37?text=FARIS';"
+                             alt="FARIS TOURS & TRAVELS Logo"
+                             class="w-full h-full object-contain rounded-xl">
+                    </div>
+                    <div class="min-w-0">
+                        <div class="font-display font-extrabold text-sm sm:text-lg tracking-wide text-sapphire truncate">
+                            FARIS TOURS &amp; TRAVELS
+                        </div>
+                        <p class="text-[10px] sm:text-[11px] text-slate-600 font-medium truncate">
+                            Almudheef Company First lilsiyaha sharika shakhs wahid
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Prominent Luxury Admin Logo Trigger -->
+                <button type="button" id="header-admin-trigger" data-open-admin-modal
+                        class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-2xl bg-gradient-to-r from-sapphire via-sapphireLight to-sapphire text-champagne border border-royalGold/70 hover:border-royalGold shadow-md active:scale-95 transition min-h-[44px]"
+                        title="Admin Logo Login">
+                    <span class="w-7 h-7 rounded-xl bg-royalGold text-sapphire flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-crown text-xs"></i>
+                    </span>
+                    <span class="text-left leading-tight">
+                        <span class="block text-[9px] uppercase tracking-wider text-royalGold font-bold">Admin Logo</span>
+                        <span id="header-admin-status-label" class="block text-xs font-extrabold text-white" data-i18n="admin_login_cta">Admin Login</span>
+                    </span>
+                </button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden xl:flex items-center gap-5 text-xs font-bold text-sapphire">
+                <a href="#home" data-i18n="nav_home" class="hover:text-royalGold transition py-2">Home</a>
+                <a href="#highlights" data-i18n="nav_umrah_visa" class="hover:text-royalGold transition py-2">Umrah &amp; Visa</a>
+                <a href="#updates" data-i18n="nav_updates" class="hover:text-royalGold transition py-2">Updates</a>
+                <a href="#tickets" data-i18n="nav_tickets" class="hover:text-royalGold transition py-2">Ticket Prices</a>
+                <a href="#food-menu" data-i18n="nav_food" class="hover:text-royalGold transition py-2">Food Menu</a>
+                <a href="#about" data-i18n="nav_about" class="hover:text-royalGold transition py-2">About</a>
+                <a href="#reviews" data-i18n="nav_reviews" class="hover:text-royalGold transition py-2">Reviews</a>
+                <a href="#location" data-i18n="nav_location" class="hover:text-royalGold transition py-2">Location</a>
+            </nav>
+
+            <!-- Right Touch Actions: Instagram + Admin Logout (when active) + Mobile Menu -->
+            <div class="flex items-center gap-2">
+                <button type="button" id="header-logout-btn" data-admin-logout
+                        class="hidden items-center gap-1.5 px-3 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 active:scale-95 text-white font-bold text-xs shadow transition min-h-[44px]">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span data-i18n="logout_btn">Logout</span>
+                </button>
+                <a href="https://www.instagram.com/faristoursandtravels?knvt=MXhoY3VvbGRsNDI2cQ=="
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl insta-lux-grad hover:opacity-95 active:scale-95 text-white font-bold text-xs shadow-md transition min-h-[44px]">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                    <span class="hidden md:inline">Instagram</span>
+                </a>
+                <button type="button" id="mobile-menu-btn" aria-label="Toggle Navigation Menu"
+                        class="xl:hidden w-11 h-11 rounded-xl bg-alabaster border border-royalGold/40 text-sapphire flex items-center justify-center active:scale-95 transition min-w-[44px] min-h-[44px]">
+                    <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Collapsible Navigation Drawer -->
+        <div id="mobile-nav-drawer" class="hidden xl:hidden bg-sapphire text-ivory border-t border-royalGold/30 px-4 py-4 space-y-2 shadow-2xl">
+            <div class="grid grid-cols-2 gap-2">
+                <a href="#home" data-close-drawer data-i18n="nav_home" class="px-3.5 py-3 rounded-xl bg-white/5 hover:bg-royalGold hover:text-sapphire font-bold text-xs transition flex items-center gap-2 min-h-[44px]">
+                    <i class="fa-solid fa-house text-royalGold"></i><span>Home</span>
+                </a>
+                <a href="#highlights" data-close-drawer data-i18n="nav_umrah_visa" class="px-3.5 py-3 rounded-xl bg-white/5 hover:bg-royalGold hover:text-sapphire font-bold text-xs transition flex items-center gap-2 min-h-[44px]">
+                    <i class="fa-solid fa-kaaba text-royalGold"></i><span>Umrah &amp; Visa</span>
+                </a>
+                <a href="#updates" data-close-drawer data-i18n="nav_updates" class="px-3.5 py-3 rounded-xl bg-white/5 hover:bg-royalGold hover:text-sapphire font-bold text-xs transition flex items-center gap-2 min-h-[44px]">
+                    <i class="fa-solid fa-bullhorn text-royalGold"></i><span>Updates</span>
+                </a>
+                <a href="#tickets" data-close-drawer data-i18n="nav_tickets" class="px-3.5 py-3 rounded-xl bg-white/5 hover:bg-royalGold hover:text-sapphire font-bold text-xs transition flex items-center gap-2 min-h-[44px]">
+                    <i class="fa-solid fa-ticket text-royalGold"></i><span>Ticket Prices</span>
+                </a>
+                <a href="#food-menu" data-close-drawer data-i18n="nav_food" class="px-3.5 py-3 rounded-xl bg-white/5 hover:bg-royalGold hover:text-sapphire font-bold text-xs transition flex items-center gap-2 min-h-[44px]">
+                    <i class="fa-solid fa-utensils text-royalGold"></i><span>Food Menu</span>
+                </a>
+                <a href="#reviews" data-close-drawer data-i18n="nav_reviews" class="px-3.5 py-3 rounded-xl bg-white/5 hover:bg-royalGold hover:text-sapphire font-bold text-xs transition flex items-center gap-2 min-h-[44px]">
+                    <i class="fa-solid fa-star text-royalGold"></i><span>Reviews</span>
+                </a>
+                <a href="#about" data-close-drawer data-i18n="nav_about" class="px-3.5 py-3 rounded-xl bg-white/5 hover:bg-royalGold hover:text-sapphire font-bold text-xs transition flex items-center gap-2 min-h-[44px]">
+                    <i class="fa-solid fa-building-columns text-royalGold"></i><span>About</span>
+                </a>
+                <a href="#location" data-close-drawer data-i18n="nav_location" class="px-3.5 py-3 rounded-xl bg-white/5 hover:bg-royalGold hover:text-sapphire font-bold text-xs transition flex items-center gap-2 min-h-[44px]">
+                    <i class="fa-solid fa-location-dot text-royalGold"></i><span>Location</span>
+                </a>
+            </div>
+            <button type="button" data-open-admin-modal
+                    class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-royalGold to-champagne text-sapphire font-extrabold text-xs shadow-lg active:scale-[0.99] transition flex items-center justify-center gap-2 min-h-[48px]">
+                <i class="fa-solid fa-crown"></i>
+                <span data-i18n="admin_logo_trigger_full">Admin Logo Login (Manage Updates, Prices &amp; Menu)</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Active Admin Mode Banner (Visible ONLY when logged in as Admin) -->
+    <div id="admin-active-ribbon" class="hidden bg-gradient-to-r from-emeraldLux via-emerald-800 to-sapphire text-white border-b border-royalGold/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5 text-xs sm:text-sm font-bold">
+                <span class="w-8 h-8 rounded-xl bg-royalGold text-sapphire flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-crown"></i>
+                </span>
+                <div>
+                    <span data-i18n="admin_ribbon_title" class="font-extrabold text-champagne">Admin Mode Active</span>
+                    <span class="text-white/80 text-xs block sm:inline sm:ml-2">(faristoursandtravels) — Full editing unlocked</span>
+                </div>
+            </div>
+            <button type="button" data-admin-logout
+                    class="px-4 py-2 rounded-xl bg-white/15 hover:bg-red-600 text-white font-bold text-xs transition flex items-center gap-1.5 min-h-[40px]">
+                <i class="fa-solid fa-lock"></i>
+                <span data-i18n="logout_btn">Logout</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="lux-hero-bg text-ivory relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+            <!-- Left Hero Copy -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-royalGold/15 border border-royalGold/50 text-champagne text-xs font-bold tracking-wide">
+                    <i class="fa-solid fa-gem text-royalGold"></i>
+                    <span data-i18n="hero_badge">Luxury Travel • Umrah &amp; Visa • Hospitality</span>
+                </div>
+
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] tracking-tight">
+                    <span class="block font-display text-champagne">FARIS TOURS &amp; TRAVELS</span>
+                    <span data-i18n="hero_headline_sub" class="block text-xl sm:text-3xl text-white/95 font-bold mt-2">
+                        Premium Umrah, Visa &amp; Global Travel Concierge
+                    </span>
+                </h1>
+
+                <p data-i18n="hero_desc" class="text-sm sm:text-base text-slate-200 max-w-2xl leading-relaxed">
+                    Almudheef Company First lilsiyaha sharika shakhs wahid — delivering seamless Umrah pilgrimages, rapid visa processing, flight &amp; transport ticketing, and wholesome weekly meals with royal care.
+                </p>
+
+                <!-- Prominent Umrah & Visa Pill Badges -->
+                <div class="flex flex-wrap gap-2.5 pt-1">
+                    <a href="#highlights" class="px-4 py-2 rounded-xl bg-emeraldLux/90 hover:bg-emerald-700 border border-emerald-300/30 text-white text-xs font-extrabold transition inline-flex items-center gap-2 min-h-[42px]">
+                        <i class="fa-solid fa-kaaba text-champagne"></i>
+                        <span data-i18n="pill_umrah">Umrah Packages &amp; Ziyarat</span>
+                    </a>
+                    <a href="#highlights" class="px-4 py-2 rounded-xl bg-royalGold/20 hover:bg-royalGold hover:text-sapphire border border-royalGold/60 text-champagne text-xs font-extrabold transition inline-flex items-center gap-2 min-h-[42px]">
+                        <i class="fa-solid fa-passport"></i>
+                        <span data-i18n="pill_visa">Express Visa Assistance</span>
+                    </a>
+                </div>
+
+                <!-- Touch Action Buttons (Calls, Instagram, Location, Admin Logo) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2" dir="ltr">
+                    <a href="tel:+966544672997" class="px-4 py-3.5 rounded-2xl bg-gradient-to-r from-royalGold to-champagne hover:brightness-105 active:scale-[0.98] text-sapphire font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2.5 min-h-[50px]">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Call +966544672997</span>
+                    </a>
+                    <a href="tel:+917025443638" class="px-4 py-3.5 rounded-2xl bg-emeraldLux hover:bg-emerald-700 active:scale-[0.98] text-white font-extrabold text-sm border border-emerald-300/30 shadow-lg transition flex items-center justify-center gap-2.5 min-h-[50px]">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <span>Call +917025443638</span>
+                    </a>
+                    <a href="https://www.instagram.com/faristoursandtravels?knvt=MXhoY3VvbGRsNDI2cQ==" target="_blank" rel="noopener noreferrer" class="px-4 py-3.5 rounded-2xl insta-lux-grad hover:opacity-95 active:scale-[0.98] text-white font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2.5 min-h-[50px]">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                        <span data-i18n="btn_open_insta">Open Instagram (@faristoursandtravels)</span>
+                    </a>
+                    <a href="https://maps.app.goo.gl/D35adqW7wdWEdc7b7?g_st=awb" target="_blank" rel="noopener noreferrer" class="px-4 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 active:scale-[0.98] text-champagne font-extrabold text-sm border border-royalGold/50 shadow-lg transition flex items-center justify-center gap-2.5 min-h-[50px]">
+                        <i class="fa-solid fa-location-dot text-royalGold"></i>
+                        <span data-i18n="btn_open_loc">Open Live Location</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Luxury Showcase Card (Fleet & Logo + Admin Logo Badge) -->
+            <div class="lg:col-span-5">
+                <div class="rounded-3xl bg-sapphireLight/95 border border-royalGold/50 p-5 sm:p-6 shadow-2xl space-y-4">
+                    <div class="flex items-center justify-between gap-2">
+                        <span class="px-3 py-1 rounded-full bg-royalGold/20 text-champagne text-[11px] font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-van-shuttle mr-1 text-royalGold"></i>
+                            <span data-i18n="fleet_badge">Signature Fleet</span>
+                        </span>
+                        <button type="button" data-open-admin-modal
+                                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-royalGold text-sapphire hover:bg-champagne active:scale-95 text-xs font-extrabold shadow transition min-h-[36px]">
+                            <i class="fa-solid fa-crown"></i>
+                            <span>Admin Logo</span>
+                        </button>
+                    </div>
+
+                    <div class="rounded-2xl bg-sapphire p-3 border border-royalGold/30 overflow-hidden">
+                        <img src="image_de5b64.jpg"
+                             onerror="this.onerror=null;this.src='https://placehold.co/640x360/071326/D4AF37?text=FARIS+TOURS+%26+TRAVELS+FLEET';"
+                             alt="FARIS TOURS & TRAVELS Branded Van"
+                             class="w-full h-48 sm:h-56 object-contain rounded-xl">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2.5 text-xs" dir="ltr">
+                        <a href="tel:+966544672997" class="p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition block">
+                            <span class="text-[10px] uppercase text-royalGold font-bold block">KSA Hotline</span>
+                            <span class="font-extrabold text-white text-sm">+966544672997</span>
+                        </a>
+                        <a href="tel:+917025443638" class="p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition block">
+                            <span class="text-[10px] uppercase text-emerald-300 font-bold block">India Hotline</span>
+                            <span class="font-extrabold text-white text-sm">+917025443638</span>
+                        </a>
+                    </div>
+
+                    <a href="mailto:fadilshahulm@gmail.com" dir="ltr" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-royalGold/20 border border-royalGold/30 text-champagne text-xs font-bold flex items-center justify-center gap-2 transition min-h-[42px]">
+                        <i class="fa-solid fa-envelope text-royalGold"></i>
+                        <span>fadilshahulm@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTED UMRAH SERVICE & VISA SERVICE SECTION -->
+    <section id="highlights" class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-16 space-y-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-royalGold/25 pb-5">
+            <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-royalGold" data-i18n="highlights_kicker">Signature Pillars</span>
+                <h2 id="highlights-main-title" data-i18n="highlights_title" class="text-2xl sm:text-4xl font-extrabold text-sapphire mt-1">
+                    Umrah Service &amp; Visa Service Highlights
+                </h2>
+            </div>
+            <button type="button" data-admin-action="edit-highlight" data-target="umrah"
+                    class="admin-only-btn hidden px-4 py-2.5 rounded-xl bg-sapphire hover:bg-sapphireLight text-champagne border border-royalGold font-bold text-xs shadow transition items-center gap-2 min-h-[44px]">
+                <i class="fa-solid fa-pen-to-square text-royalGold"></i>
+                <span data-i18n="btn_edit_highlights">Edit Umrah &amp; Visa Text</span>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
+            <!-- UMRAH SERVICE HIGHLIGHT CARD -->
+            <article class="rounded-3xl bg-gradient-to-br from-sapphire via-sapphireLight to-emeraldLux text-ivory p-6 sm:p-8 border-2 border-royalGold/60 gold-border-glow flex flex-col justify-between gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between gap-2">
+                        <span class="px-3.5 py-1.5 rounded-full bg-royalGold text-sapphire font-extrabold text-xs inline-flex items-center gap-1.5">
+                            <i class="fa-solid fa-kaaba"></i>
+                            <span id="umrah-badge-text" data-i18n="umrah_badge">MAIN HIGHLIGHT • UMRAH SERVICE</span>
+                        </span>
+                        <button type="button" data-admin-action="edit-highlight" data-target="umrah"
+                                class="admin-only-btn hidden px-3 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-champagne text-xs font-bold min-h-[38px]">
+                            <i class="fa-solid fa-pen"></i> Edit
+                        </button>
+                    </div>
+
+                    <h3 id="umrah-card-title" data-i18n="umrah_title" class="text-2xl sm:text-3xl font-extrabold text-champagne leading-snug">
+                        Complete Sacred Umrah Pilgrimage Packages
+                    </h3>
+
+                    <p id="umrah-card-desc" data-i18n="umrah_desc" class="text-sm text-slate-100 leading-relaxed">
+                        Experience a serene, spiritually fulfilling Umrah journey with comfortable accommodation near the Haramain, luxury AC transport, guided Ziyarat tours, and freshly prepared meals.
+                    </p>
+
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-champagne/95 pt-1">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-royalGold"></i>
+                            <span id="umrah-pt-1" data-i18n="umrah_pt1">Makkah &amp; Madinah Hotel Arrangements &amp; VIP Transfers</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-royalGold"></i>
+                            <span id="umrah-pt-2" data-i18n="umrah_pt2">Dedicated Group &amp; Family Umrah Coordination</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-royalGold"></i>
+                            <span id="umrah-pt-3" data-i18n="umrah_pt3">24/7 Multilingual Support &amp; Fresh Daily Cuisine</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pt-4 border-t border-white/15 flex flex-wrap gap-3" dir="ltr">
+                    <a href="tel:+966544672997" class="flex-1 min-w-[160px] py-3 px-4 rounded-2xl bg-royalGold hover:bg-champagne active:scale-[0.98] text-sapphire font-extrabold text-xs sm:text-sm text-center shadow transition flex items-center justify-center gap-2 min-h-[46px]">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Umrah Desk: +966544672997</span>
+                    </a>
+                    <a href="tel:+917025443638" class="flex-1 min-w-[160px] py-3 px-4 rounded-2xl bg-white/10 hover:bg-white/20 active:scale-[0.98] text-white font-extrabold text-xs sm:text-sm text-center border border-royalGold/40 transition flex items-center justify-center gap-2 min-h-[46px]">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <span>India Desk: +917025443638</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- VISA SERVICE HIGHLIGHT CARD -->
+            <article class="rounded-3xl bg-white p-6 sm:p-8 border-2 border-royalGold/60 gold-border-glow flex flex-col justify-between gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between gap-2">
+                        <span class="px-3.5 py-1.5 rounded-full bg-sapphire text-champagne font-extrabold text-xs inline-flex items-center gap-1.5">
+                            <i class="fa-solid fa-passport text-royalGold"></i>
+                            <span id="visa-badge-text" data-i18n="visa_badge">MAIN HIGHLIGHT • VISA SERVICE</span>
+                        </span>
+                        <button type="button" data-admin-action="edit-highlight" data-target="visa"
+                                class="admin-only-btn hidden px-3 py-1.5 rounded-xl bg-alabaster hover:bg-royalGold/20 text-sapphire text-xs font-bold min-h-[38px]">
+                            <i class="fa-solid fa-pen"></i> Edit
+                        </button>
+                    </div>
+
+                    <h3 id="visa-card-title" data-i18n="visa_title" class="text-2xl sm:text-3xl font-extrabold text-sapphire leading-snug">
+                        Fast, Transparent &amp; Reliable Visa Services
+                    </h3>
+
+                    <p id="visa-card-desc" data-i18n="visa_desc" class="text-sm text-slate-600 leading-relaxed">
+                        From Umrah &amp; visit visas to GCC &amp; international travel documentation, our specialists handle application review, scheduling, and status follow-ups smoothly.
+                    </p>
+
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-sapphire font-medium pt-1">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emeraldLux"></i>
+                            <span id="visa-pt-1" data-i18n="visa_pt1">Umrah Visa, Tourist / Visit Visa &amp; Travel Insurance</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emeraldLux"></i>
+                            <span id="visa-pt-2" data-i18n="visa_pt2">Complete Document Checklist &amp; Error-Free Filing</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emeraldLux"></i>
+                            <span id="visa-pt-3" data-i18n="visa_pt3">Direct Guidance via Phone, Email &amp; Live Location</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-3" dir="ltr">
+                    <a href="tel:+966544672997" class="flex-1 min-w-[160px] py-3 px-4 rounded-2xl bg-sapphire hover:bg-sapphireLight active:scale-[0.98] text-champagne font-extrabold text-xs sm:text-sm text-center shadow transition flex items-center justify-center gap-2 min-h-[46px]">
+                        <i class="fa-solid fa-passport text-royalGold"></i>
+                        <span>Visa Enquiry: +966544672997</span>
+                    </a>
+                    <a href="mailto:fadilshahulm@gmail.com" class="flex-1 min-w-[160px] py-3 px-4 rounded-2xl bg-alabaster hover:bg-royalGold/20 active:scale-[0.98] text-sapphire font-extrabold text-xs sm:text-sm text-center border border-royalGold/50 transition flex items-center justify-center gap-2 min-h-[46px]">
+                        <i class="fa-solid fa-envelope text-royalGold"></i>
+                        <span>Email Visa Docs</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- LATEST UPDATES & OFFERS SECTION (ADMIN ADD / EDIT / DELETE) -->
+    <section id="updates" class="bg-alabaster/80 border-y border-royalGold/25 py-14 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-royalGold" data-i18n="updates_kicker">Agency Bulletin</span>
+                    <h2 data-i18n="updates_title" class="text-2xl sm:text-4xl font-extrabold text-sapphire mt-1">
+                        Latest Updates &amp; Special Offers
+                    </h2>
+                    <p data-i18n="updates_sub" class="text-xs sm:text-sm text-slate-600 mt-1">
+                        Fresh announcements on Umrah departures, visa rules, and seasonal travel fares.
+                    </p>
+                </div>
+
+                <button type="button" data-admin-action="focus-update-form"
+                        class="admin-only-btn hidden px-4 py-2.5 rounded-xl bg-royalGold hover:bg-champagne text-sapphire font-extrabold text-xs shadow transition items-center gap-2 min-h-[44px]">
+                    <i class="fa-solid fa-plus-circle"></i>
+                    <span data-i18n="btn_add_update">Add New Update</span>
+                </button>
+            </div>
+
+            <!-- Admin-Only Update Composer Form -->
+            <div id="update-admin-panel" class="admin-only-panel hidden rounded-3xl bg-sapphire text-ivory p-5 sm:p-6 border border-royalGold/60 shadow-xl">
+                <div class="flex items-center justify-between gap-2 mb-4">
+                    <h3 class="text-sm sm:text-base font-extrabold text-champagne flex items-center gap-2">
+                        <i class="fa-solid fa-crown text-royalGold"></i>
+                        <span data-i18n="admin_update_form_title">Admin: Publish or Edit Agency Update</span>
+                    </h3>
+                    <button type="button" id="cancel-update-edit-btn" class="hidden text-xs font-bold text-champagne underline min-h-[36px] px-2">
+                        Cancel Edit
+                    </button>
+                </div>
+                <form id="update-form" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
+                    <input type="hidden" id="update-edit-id">
+                    <div class="lg:col-span-2">
+                        <label class="block text-[11px] font-bold text-champagne mb-1">Category</label>
+                        <select id="update-category" class="w-full px-3 py-3 rounded-xl bg-white text-sapphire text-xs font-bold min-h-[44px]">
+                            <option value="Umrah">Umrah</option>
+                            <option value="Visa">Visa</option>
+                            <option value="Tickets">Tickets</option>
+                            <option value="Food &amp; Fleet">Food &amp; Fleet</option>
+                        </select>
+                    </div>
+                    <div class="lg:col-span-4">
+                        <label class="block text-[11px] font-bold text-champagne mb-1">Headline</label>
+                        <input type="text" id="update-headline" required placeholder="e.g., Next Umrah Group Departure" class="w-full px-3.5 py-3 rounded-xl bg-white text-sapphire text-xs font-semibold min-h-[44px]">
+                    </div>
+                    <div class="lg:col-span-2">
+                        <label class="block text-[11px] font-bold text-champagne mb-1">Badge / Date</label>
+                        <input type="text" id="update-badge" placeholder="e.g., Limited Seats" class="w-full px-3.5 py-3 rounded-xl bg-white text-sapphire text-xs font-semibold min-h-[44px]">
+                    </div>
+                    <div class="lg:col-span-4">
+                        <label class="block text-[11px] font-bold text-champagne mb-1">Details</label>
+                        <input type="text" id="update-details" required placeholder="Enter full offer or update details..." class="w-full px-3.5 py-3 rounded-xl bg-white text-sapphire text-xs font-semibold min-h-[44px]">
+                    </div>
+                    <div class="sm:col-span-2 lg:col-span-12 flex justify-end pt-1">
+                        <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-royalGold hover:bg-champagne active:scale-95 text-sapphire font-extrabold text-xs shadow-md transition flex items-center justify-center gap-2 min-h-[44px]">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span data-i18n="btn_save_update">Save Update</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Updates Grid -->
+            <div id="updates-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5"></div>
+        </div>
+    </section>
+
+    <!-- TICKET & PACKAGE PRICING SECTION (DYNAMIC COLUMN + ADMIN CONTROLS) -->
+    <section id="tickets" class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-16 space-y-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-royalGold/25 pb-5">
+            <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-royalGold" data-i18n="tickets_kicker">Transparent Fares</span>
+                <h2 data-i18n="tickets_title" class="text-2xl sm:text-4xl font-extrabold text-sapphire mt-1">
+                    Ticket &amp; Package Prices
+                </h2>
+                <p data-i18n="tickets_sub" class="text-xs sm:text-sm text-slate-600 mt-1">
+                    Live routes, Umrah &amp; visa service tariffs. Admin can add, edit, or remove entries anytime.
+                </p>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-3.5 py-2 rounded-xl bg-alabaster border border-royalGold/40 text-xs font-extrabold text-sapphire">
+                    <span data-i18n="lbl_total_items">Total Listed</span>: <span id="ticket-total-badge" class="text-royalGold">0</span>
+                </span>
+                <button type="button" data-admin-action="focus-ticket-form"
+                        class="admin-only-btn hidden px-4 py-2.5 rounded-xl bg-sapphire hover:bg-sapphireLight text-champagne font-bold text-xs shadow transition items-center gap-1.5 min-h-[44px]">
+                    <i class="fa-solid fa-plus text-royalGold"></i>
+                    <span>Add Fare</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="tickets-layout-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
+            <!-- Admin-Only Ticket Price Column (Hidden unless logged in as Admin) -->
+            <div id="ticket-admin-column" class="admin-only-panel hidden lg:col-span-5 rounded-3xl bg-sapphire text-ivory p-6 border-2 border-royalGold/60 shadow-xl space-y-4">
+                <div class="flex items-center justify-between gap-2">
+                    <h3 class="text-base font-extrabold text-champagne flex items-center gap-2">
+                        <i class="fa-solid fa-crown text-royalGold"></i>
+                        <span data-i18n="ticket_admin_col_title">Admin Ticket Price Manager</span>
+                    </h3>
+                    <button type="button" id="cancel-ticket-edit-btn" class="hidden text-xs font-bold text-champagne underline min-h-[36px] px-2">
+                        Cancel
+                    </button>
+                </div>
+                <p class="text-xs text-slate-300">Add new routes, Umrah/Visa package prices, or update existing fares.</p>
+
+                <form id="ticket-form" class="space-y-3">
+                    <input type="hidden" id="ticket-edit-id">
+                    <div>
+                        <label class="block text-xs font-bold text-champagne mb-1">From / Origin</label>
+                        <input type="text" id="ticket-from" required placeholder="e.g., Riyadh / Jeddah / Kochi" class="w-full px-4 py-3 rounded-xl bg-white text-sapphire text-sm font-semibold min-h-[44px]">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-champagne mb-1">To / Destination or Service</label>
+                        <input type="text" id="ticket-to" required placeholder="e.g., Makkah Umrah / Dubai / Kozhikode" class="w-full px-4 py-3 rounded-xl bg-white text-sapphire text-sm font-semibold min-h-[44px]">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-champagne mb-1">Type</label>
+                            <input type="text" id="ticket-type" required placeholder="e.g., Umrah / Visa / Flight" class="w-full px-3.5 py-3 rounded-xl bg-white text-sapphire text-sm font-semibold min-h-[44px]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-champagne mb-1">Price</label>
+                            <input type="text" id="ticket-price" required placeholder="e.g., SAR 450 / ₹18,500" class="w-full px-3.5 py-3 rounded-xl bg-white text-sapphire text-sm font-extrabold min-h-[44px]">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-champagne mb-1">Notes (Optional)</label>
+                        <input type="text" id="ticket-note" placeholder="e.g., Includes luggage & assistance" class="w-full px-4 py-3 rounded-xl bg-white text-sapphire text-sm font-semibold min-h-[44px]">
+                    </div>
+                    <button type="submit" class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-royalGold to-champagne hover:brightness-105 active:scale-[0.98] text-sapphire font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2 min-h-[48px]">
+                        <i class="fa-solid fa-plus-circle"></i>
+                        <span data-i18n="btn_save_ticket">Save Ticket / Package Price</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Dynamic Ticket Pricing Column -->
+            <div id="ticket-display-column" class="lg:col-span-12 space-y-4">
+                <div id="ticket-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEEKLY FOOD MENU SECTION (MONDAY TO SUNDAY: MORNING, AFTERNOON, NIGHT) -->
+    <section id="food-menu" class="bg-alabaster border-y border-royalGold/25 py-14 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-royalGold" data-i18n="food_kicker">Fresh Daily Kitchen</span>
+                    <h2 data-i18n="food_title" class="text-2xl sm:text-4xl font-extrabold text-sapphire mt-1">
+                        Weekly Food Menu (Monday – Sunday)
+                    </h2>
+                    <p data-i18n="food_sub" class="text-xs sm:text-sm text-slate-600 mt-1">
+                        Morning, Afternoon &amp; Night meals crafted fresh every day of the week.
+                    </p>
+                </div>
+
+                <!-- Food Hotline Call Link -->
+                <a href="tel:+966569505015" dir="ltr" class="inline-flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-emeraldLux hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm shadow-md transition self-start lg:self-auto min-h-[46px]">
+                    <i class="fa-solid fa-utensils text-champagne"></i>
+                    <span>Food Desk: +966 56 950 5015</span>
+                </a>
+            </div>
+
+            <!-- Day Selector Tabs -->
+            <div id="food-day-tabs" class="flex flex-wrap gap-2"></div>
+
+            <!-- Weekly Food Cards Grid -->
+            <div id="food-cards-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+
+            <!-- Reference Weekly Food Menu Poster Card -->
+            <div class="rounded-3xl bg-white p-5 sm:p-6 border border-royalGold/40 shadow-sm flex flex-col md:flex-row items-center gap-6">
+                <img src="image_5ecd41.jpg"
+                     onerror="this.onerror=null;this.src='https://placehold.co/420x560/071326/D4AF37?text=Weekly+Food+Menu';"
+                     alt="Weekly Food Menu Chart"
+                     class="w-full md:w-52 h-64 object-cover rounded-2xl border border-slate-200 shrink-0">
+                <div class="space-y-3 text-center md:text-start flex-1">
+                    <span class="px-3 py-1 rounded-full bg-royalGold/20 text-sapphire font-extrabold text-xs">
+                        <i class="fa-solid fa-calendar-week mr-1 text-royalGold"></i>
+                        <span data-i18n="poster_badge">Weekly Menu Schedule</span>
+                    </span>
+                    <h3 data-i18n="poster_title" class="text-xl font-extrabold text-sapphire">
+                        Monday to Sunday Fresh Meals — Morning, Afternoon &amp; Night
+                    </h3>
+                    <p data-i18n="poster_desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Tap any day above to inspect Morning, Afternoon, and Night dishes. Logged-in Admins can edit any day's meal items directly.
+                    </p>
+                    <div class="pt-1 flex flex-wrap justify-center md:justify-start gap-2.5" dir="ltr">
+                        <a href="tel:+966569505015" class="px-4 py-2.5 rounded-xl bg-sapphire text-champagne font-bold text-xs hover:bg-sapphireLight transition min-h-[42px] inline-flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-royalGold"></i><span>+966 56 950 5015</span>
+                        </a>
+                        <a href="tel:+966544672997" class="px-4 py-2.5 rounded-xl bg-royalGold text-sapphire font-extrabold text-xs hover:bg-champagne transition min-h-[42px] inline-flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i><span>+966544672997</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION (WITH COMPANY DETAILS IMAGE & ADMIN EDIT) -->
+    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-16">
+        <div class="rounded-3xl bg-white border border-royalGold/40 p-6 sm:p-10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7 space-y-5">
+                <div class="flex items-center justify-between gap-2">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-royalGold" data-i18n="about_kicker">About Our Agency</span>
+                    <button type="button" data-admin-action="edit-about"
+                            class="admin-only-btn hidden px-3.5 py-2 rounded-xl bg-sapphire text-champagne text-xs font-bold hover:bg-sapphireLight transition min-h-[40px]">
+                        <i class="fa-solid fa-pen mr-1 text-royalGold"></i>Edit About
+                    </button>
+                </div>
+
+                <h2 id="about-heading" data-i18n="about_title" class="text-2xl sm:text-4xl font-extrabold text-sapphire leading-tight">
+                    FARIS TOURS &amp; TRAVELS — Trusted Excellence in Travel &amp; Hospitality
+                </h2>
+
+                <p id="about-body" data-i18n="about_desc" class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                    Operating under Almudheef Company First lilsiyaha sharika shakhs wahid, FARIS TOURS &amp; TRAVELS is committed to delivering dependable Umrah journeys, smooth visa processing, flight &amp; road ticketing, and comforting daily meals.
+                </p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                    <div class="p-3.5 rounded-2xl bg-alabaster border border-royalGold/25 text-center">
+                        <i class="fa-solid fa-kaaba text-royalGold text-lg mb-1"></i>
+                        <div class="font-extrabold text-xs text-sapphire" data-i18n="stat_umrah">Umrah Care</div>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-alabaster border border-royalGold/25 text-center">
+                        <i class="fa-solid fa-passport text-royalGold text-lg mb-1"></i>
+                        <div class="font-extrabold text-xs text-sapphire" data-i18n="stat_visa">Visa Desk</div>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-alabaster border border-royalGold/25 text-center">
+                        <i class="fa-solid fa-plane-departure text-royalGold text-lg mb-1"></i>
+                        <div class="font-extrabold text-xs text-sapphire" data-i18n="stat_tickets">Ticketing</div>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-alabaster border border-royalGold/25 text-center">
+                        <i class="fa-solid fa-bowl-food text-royalGold text-lg mb-1"></i>
+                        <div class="font-extrabold text-xs text-sapphire" data-i18n="stat_food">Daily Food</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 space-y-4">
+                <div class="rounded-2xl bg-alabaster p-5 border border-royalGold/40 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <img src="image_4611f8.jpg"
+                             onerror="this.onerror=null;this.src='https://placehold.co/90x90/071326/D4AF37?text=F';"
+                             alt="Brand Emblem"
+                             class="w-14 h-14 rounded-2xl object-contain bg-white p-1 border border-royalGold/40">
+                        <div>
+                            <h3 class="font-extrabold text-sm text-sapphire">FARIS TOURS &amp; TRAVELS</h3>
+                            <p class="text-xs text-slate-600">Almudheef Company First lilsiyaha sharika shakhs wahid</p>
+                        </div>
+                    </div>
+                    <img src="image_46f4ed.jpg"
+                         onerror="this.onerror=null;this.src='https://placehold.co/500x120/FAF7F0/071326?text=Almudheef+Company+First+lilsiyaha+sharika+shakhs+wahid';"
+                         alt="Almudheef Company First lilsiyaha sharika shakhs wahid"
+                         class="w-full h-16 object-contain rounded-xl bg-white p-2 border border-slate-200">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS SECTION (VISITOR ADD + ADMIN PIN/DELETE) -->
+    <section id="reviews" class="bg-alabaster/70 border-t border-royalGold/25 py-14 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-royalGold" data-i18n="reviews_kicker">Traveler Voices</span>
+                    <h2 data-i18n="reviews_title" class="text-2xl sm:text-4xl font-extrabold text-sapphire mt-1">
+                        Customer Reviews
+                    </h2>
+                    <p data-i18n="reviews_sub" class="text-xs sm:text-sm text-slate-600 mt-1">
+                        Share your experience with our Umrah, Visa, ticketing, or food services.
+                    </p>
+                </div>
+                <span class="px-4 py-2 rounded-xl bg-white border border-royalGold/40 text-xs font-extrabold text-sapphire self-start sm:self-auto">
+                    <span data-i18n="lbl_reviews_count">Reviews</span>: <span id="review-total-badge" class="text-royalGold">0</span>
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
+                <!-- Add Review Form (Available to visitors) -->
+                <div class="lg:col-span-4 rounded-3xl bg-white p-6 border border-royalGold/40 shadow-sm">
+                    <h3 data-i18n="review_form_title" class="text-base font-extrabold text-sapphire mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-pen-fancy text-royalGold"></i>
+                        <span>Write a Review</span>
+                    </h3>
+                    <form id="review-form" class="space-y-3.5">
+                        <div>
+                            <label data-i18n="lbl_your_name" class="block text-xs font-bold text-sapphire mb-1">Your Name</label>
+                            <input type="text" id="review-name" required placeholder="e.g., Muhammed Fazil" class="w-full px-4 py-3 rounded-xl bg-ivory border border-slate-300 text-sm font-semibold focus:outline-none focus:border-royalGold min-h-[44px]">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label data-i18n="lbl_service" class="block text-xs font-bold text-sapphire mb-1">Service</label>
+                                <select id="review-service" class="w-full px-3 py-3 rounded-xl bg-ivory border border-slate-300 text-xs font-bold focus:outline-none focus:border-royalGold min-h-[44px]">
+                                    <option value="Umrah Service">Umrah Service</option>
+                                    <option value="Visa Service">Visa Service</option>
+                                    <option value="Ticket Booking">Ticket Booking</option>
+                                    <option value="Food Menu">Food Menu</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label data-i18n="lbl_rating" class="block text-xs font-bold text-sapphire mb-1">Rating</label>
+                                <select id="review-rating" class="w-full px-3 py-3 rounded-xl bg-ivory border border-slate-300 text-xs font-bold focus:outline-none focus:border-royalGold min-h-[44px]">
+                                    <option value="5">★★★★★ (5)</option>
+                                    <option value="4">★★★★☆ (4)</option>
+                                    <option value="3">★★★☆☆ (3)</option>
+                                    <option value="2">★★☆☆☆ (2)</option>
+                                    <option value="1">★☆☆☆☆ (1)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label data-i18n="lbl_comment" class="block text-xs font-bold text-sapphire mb-1">Your Review</label>
+                            <textarea id="review-comment" rows="3" required placeholder="Share your feedback..." class="w-full px-4 py-3 rounded-xl bg-ivory border border-slate-300 text-sm focus:outline-none focus:border-royalGold"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 px-4 rounded-2xl bg-sapphire hover:bg-sapphireLight active:scale-[0.98] text-champagne font-extrabold text-sm shadow-md transition flex items-center justify-center gap-2 min-h-[48px]">
+                            <i class="fa-solid fa-paper-plane text-royalGold"></i>
+                            <span data-i18n="btn_submit_review">Submit Review</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Reviews List -->
+                <div id="reviews-list" class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & DIRECT CONTACT SECTION -->
+    <section id="location" class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-16">
+        <div class="rounded-3xl bg-sapphire text-ivory p-6 sm:p-10 border-2 border-royalGold/50 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7 space-y-5">
+                <span class="px-3.5 py-1 rounded-full bg-royalGold/20 text-champagne text-xs font-extrabold inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-location-dot text-royalGold"></i>
+                    <span data-i18n="loc_badge">Live Location &amp; Instant Contact</span>
+                </span>
+                <h2 data-i18n="loc_title" class="text-2xl sm:text-4xl font-extrabold text-champagne">
+                    Visit or Reach FARIS TOURS &amp; TRAVELS
+                </h2>
+                <p data-i18n="loc_desc" class="text-sm text-slate-200 leading-relaxed">
+                    Tap any button below to open our live Google Maps location, call directly, send an email, or visit our Instagram page.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" dir="ltr">
+                    <a href="tel:+966544672997" class="p-4 rounded-2xl bg-white/10 hover:bg-royalGold hover:text-sapphire transition flex items-center gap-3 min-h-[54px]">
+                        <i class="fa-solid fa-phone text-royalGold text-lg"></i>
+                        <div>
+                            <span class="text-[10px] uppercase font-bold block opacity-75">Primary Mobile</span>
+                            <span class="font-extrabold text-sm">+966544672997</span>
+                        </div>
+                    </a>
+                    <a href="tel:+917025443638" class="p-4 rounded-2xl bg-white/10 hover:bg-emeraldLux hover:text-white transition flex items-center gap-3 min-h-[54px]">
+                        <i class="fa-solid fa-phone-volume text-emerald-300 text-lg"></i>
+                        <div>
+                            <span class="text-[10px] uppercase font-bold block opacity-75">Second Mobile</span>
+                            <span class="font-extrabold text-sm">+917025443638</span>
+                        </div>
+                    </a>
+                    <a href="mailto:fadilshahulm@gmail.com" class="p-4 rounded-2xl bg-white/10 hover:bg-royalGold hover:text-sapphire transition flex items-center gap-3 min-h-[54px]">
+                        <i class="fa-solid fa-envelope text-champagne text-lg"></i>
+                        <div class="min-w-0">
+                            <span class="text-[10px] uppercase font-bold block opacity-75">Email ID</span>
+                            <span class="font-extrabold text-sm truncate block">fadilshahulm@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/faristoursandtravels?knvt=MXhoY3VvbGRsNDI2cQ==" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl insta-lux-grad hover:opacity-95 transition flex items-center gap-3 min-h-[54px]">
+                        <i class="fa-brands fa-instagram text-white text-xl"></i>
+                        <div>
+                            <span class="text-[10px] uppercase font-bold block text-white/85">Instagram</span>
+                            <span class="font-extrabold text-sm text-white">@faristoursandtravels</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 rounded-2xl bg-sapphireLight p-6 border border-royalGold/40 text-center space-y-4">
+                <div class="w-16 h-16 rounded-2xl bg-royalGold/20 border border-royalGold text-royalGold mx-auto flex items-center justify-center text-2xl">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <h3 class="font-extrabold text-lg text-champagne" data-i18n="loc_card_title">Google Maps Live Location</h3>
+                <p class="text-xs text-slate-300" data-i18n="loc_card_sub">
+                    Almudheef Company First lilsiyaha sharika shakhs wahid — FARIS TOURS &amp; TRAVELS
+                </p>
+                <a href="https://maps.app.goo.gl/D35adqW7wdWEdc7b7?g_st=awb" target="_blank" rel="noopener noreferrer"
+                   class="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-royalGold to-champagne hover:brightness-105 active:scale-[0.98] text-sapphire font-extrabold text-sm shadow-lg transition inline-flex items-center justify-center gap-2 min-h-[48px]">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span data-i18n="btn_open_loc">Open Live Location</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-sapphire text-slate-300 border-t border-royalGold/30 py-8 px-4 sm:px-6 text-xs">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3 text-center sm:text-start">
+                <img src="image_4611f8.jpg"
+                     onerror="this.onerror=null;this.src='https://placehold.co/60x60/071326/D4AF37?text=F';"
+                     alt="FARIS TOURS & TRAVELS"
+                     class="w-10 h-10 rounded-xl object-contain bg-white p-0.5 border border-royalGold/40 hidden sm:block">
+                <div>
+                    <div class="font-display font-bold text-champagne text-sm">FARIS TOURS &amp; TRAVELS</div>
+                    <div class="text-[11px] text-slate-400">Almudheef Company First lilsiyaha sharika shakhs wahid</div>
+                </div>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <button type="button" data-open-admin-modal
+                        class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-royalGold hover:text-sapphire text-champagne font-bold transition inline-flex items-center gap-1.5 min-h-[38px]">
+                    <i class="fa-solid fa-crown text-royalGold"></i>
+                    <span>Admin Logo</span>
+                </button>
+                <span class="text-slate-400">© <span id="footer-year">2026</span> All Rights Reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE STICKY BOTTOM BAR -->
+    <div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-sapphire/95 backdrop-blur border-t border-royalGold/40 p-1.5 grid grid-cols-5 gap-1 shadow-2xl" dir="ltr">
+        <a href="tel:+966544672997" class="py-2 px-1 rounded-xl bg-royalGold active:scale-95 text-sapphire font-extrabold text-[10px] flex flex-col items-center justify-center gap-0.5 min-h-[46px]">
+            <i class="fa-solid fa-phone text-xs"></i>
+            <span>+966</span>
+        </a>
+        <a href="tel:+917025443638" class="py-2 px-1 rounded-xl bg-emeraldLux active:scale-95 text-white font-extrabold text-[10px] flex flex-col items-center justify-center gap-0.5 min-h-[46px]">
+            <i class="fa-solid fa-phone-volume text-xs"></i>
+            <span>+91</span>
+        </a>
+        <a href="https://www.instagram.com/faristoursandtravels?knvt=MXhoY3VvbGRsNDI2cQ==" target="_blank" rel="noopener noreferrer" class="py-2 px-1 rounded-xl insta-lux-grad active:scale-95 text-white font-extrabold text-[10px] flex flex-col items-center justify-center gap-0.5 min-h-[46px]">
+            <i class="fa-brands fa-instagram text-xs"></i>
+            <span>Insta</span>
+        </a>
+        <a href="https://maps.app.goo.gl/D35adqW7wdWEdc7b7?g_st=awb" target="_blank" rel="noopener noreferrer" class="py-2 px-1 rounded-xl bg-white/10 active:scale-95 text-champagne font-extrabold text-[10px] flex flex-col items-center justify-center gap-0.5 min-h-[46px]">
+            <i class="fa-solid fa-location-dot text-royalGold text-xs"></i>
+            <span>Map</span>
+        </a>
+        <button type="button" data-open-admin-modal id="mobile-bottom-admin-btn" class="py-2 px-1 rounded-xl bg-sapphireLight border border-royalGold/60 active:scale-95 text-royalGold font-extrabold text-[10px] flex flex-col items-center justify-center gap-0.5 min-h-[46px]">
+            <i class="fa-solid fa-crown text-xs"></i>
+            <span id="mobile-bottom-admin-text">Admin</span>
+        </button>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL (WITH LUXURY ADMIN LOGO EMBLEM) -->
+    <div id="admin-login-modal" class="modal-backdrop hidden fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-ivory text-sapphire rounded-3xl max-w-md w-full p-6 sm:p-8 border-2 border-royalGold shadow-2xl space-y-5 relative">
+            <button type="button" id="close-admin-login-btn" aria-label="Close Admin Login"
+                    class="absolute top-4 right-4 w-11 h-11 rounded-full bg-alabaster hover:bg-royalGold/30 text-sapphire flex items-center justify-center active:scale-95 transition min-w-[44px] min-h-[44px]">
+                <i class="fa-solid fa-xmark text-base"></i>
+            </button>
+
+            <!-- Luxury Admin Logo Emblem Header -->
+            <div class="flex items-center gap-3.5 pr-10">
+                <div class="w-14 h-14 rounded-2xl bg-sapphire text-royalGold border-2 border-royalGold flex items-center justify-center text-2xl shadow-lg shrink-0">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <div>
+                    <span class="text-[10px] font-extrabold uppercase tracking-widest text-royalGold block">Admin Logo Portal</span>
+                    <h3 data-i18n="admin_modal_title" class="text-xl font-extrabold text-sapphire">Administrator Login</h3>
+                    <p data-i18n="admin_modal_sub" class="text-xs text-slate-600">Only Admin can add or edit updates, prices, and menus.</p>
+                </div>
+            </div>
+
+            <form id="admin-login-form" class="space-y-4">
+                <div>
+                    <label data-i18n="lbl_username" class="block text-xs font-extrabold text-sapphire mb-1">Username</label>
+                    <input type="text" id="admin-username-input" required autocomplete="username" dir="ltr"
+                           placeholder="faristoursandtravels"
+                           class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-300 text-sm font-semibold focus:outline-none focus:border-royalGold min-h-[46px]">
+                </div>
+                <div>
+                    <label data-i18n="lbl_password" class="block text-xs font-extrabold text-sapphire mb-1">Password</label>
+                    <div class="relative" dir="ltr">
+                        <input type="password" id="admin-password-input" required autocomplete="current-password"
+                               placeholder="••••••••••"
+                               class="w-full px-4 py-3.5 pr-12 rounded-xl bg-white border border-slate-300 text-sm font-semibold focus:outline-none focus:border-royalGold min-h-[46px]">
+                        <button type="button" id="toggle-password-vis-btn" aria-label="Toggle Password Visibility"
+                                class="absolute inset-y-0 right-0 px-3.5 text-slate-600 hover:text-sapphire flex items-center justify-center min-w-[44px]">
+                            <i id="password-vis-icon" class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="admin-login-error-box" class="hidden p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-bold"></div>
+
+                <button type="submit" class="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-sapphire to-sapphireLight hover:brightness-110 active:scale-[0.98] text-champagne font-extrabold text-sm border border-royalGold shadow-lg transition flex items-center justify-center gap-2 min-h-[50px]">
+                    <i class="fa-solid fa-shield-check text-royalGold"></i>
+                    <span data-i18n="btn_login_submit">Unlock Admin Controls</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN CONTENT EDITOR MODAL (HIGHLIGHTS, ABOUT, FOOD MENU) -->
+    <div id="admin-editor-modal" class="modal-backdrop hidden fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-ivory text-sapphire rounded-3xl max-w-lg w-full p-6 sm:p-7 border-2 border-royalGold shadow-2xl space-y-4 relative my-auto">
+            <button type="button" id="close-editor-modal-btn" aria-label="Close Editor"
+                    class="absolute top-4 right-4 w-11 h-11 rounded-full bg-alabaster hover:bg-royalGold/30 text-sapphire flex items-center justify-center active:scale-95 transition min-w-[44px] min-h-[44px]">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="editor-modal-heading" class="text-lg sm:text-xl font-extrabold text-sapphire pr-10">Edit Content</h3>
+            <form id="admin-editor-form" class="space-y-3.5">
+                <input type="hidden" id="editor-mode">
+                <input type="hidden" id="editor-target-key">
+                <div id="editor-dynamic-fields" class="space-y-3"></div>
+                <div class="flex items-center justify-end gap-2 pt-2">
+                    <button type="button" id="cancel-editor-modal-btn" class="px-4 py-3 rounded-xl bg-alabaster hover:bg-slate-200 text-sapphire font-bold text-xs min-h-[44px]">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-5 py-3 rounded-xl bg-sapphire hover:bg-sapphireLight text-champagne font-extrabold text-xs border border-royalGold shadow transition flex items-center gap-1.5 min-h-[44px]">
+                        <i class="fa-solid fa-check text-royalGold"></i>
+                        <span>Save Changes</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            /* ==================== STRICT ADMIN CREDENTIALS ==================== */
+            const ADMIN_USERNAME = 'faristoursandtravels';
+            const ADMIN_PASSWORD = '0544672997';
+
+            /* ==================== SAFE STORAGE HELPERS ==================== */
+            function readStorage(key, fallback) {
+                try {
+                    const raw = localStorage.getItem(key);
+                    return raw ? JSON.parse(raw) : fallback;
+                } catch (err) {
+                    return fallback;
+                }
+            }
+
+            function writeStorage(key, value) {
+                try {
+                    localStorage.setItem(key, JSON.stringify(value));
+                } catch (err) {
+                    // Ignore quota/sandbox storage errors gracefully
+                }
+            }
+
+            function escapeHtml(str) {
+                return String(str || '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
+
+            /* ==================== APPLICATION STATE ==================== */
+            let isAdminAuthenticated = readStorage('faris_lux_admin_auth', false) === true;
+            let currentLang = readStorage('faris_lux_lang', 'ml');
+            if (!['ml', 'en', 'ar', 'hi'].includes(currentLang)) currentLang = 'ml';
+            let activeFoodDay = 'ALL';
+
+            /* ==================== 4-LANGUAGE TRANSLATIONS ==================== */
+            const TRANSLATIONS = {
+                ml: {
+                    top_live_loc: 'ലൈവ് ലൊക്കേഷൻ',
+                    admin_login_cta: 'അഡ്മിൻ ലോഗിൻ',
+                    admin_logo_trigger_full: 'Admin Logo Login (അപ്ഡേറ്റുകൾ, നിരക്കുകൾ & മെനു മാറ്റാൻ)',
+                    logout_btn: 'ലോഗ്ഔട്ട്',
+                    nav_home: 'ഹോം',
+                    nav_umrah_visa: 'ഉംറ & വിസ',
+                    nav_updates: 'അപ്ഡേറ്റുകൾ',
+                    nav_tickets: 'ടിക്കറ്റ് നിരക്ക്',
+                    nav_food: 'ഭക്ഷണ മെനു',
+                    nav_about: 'എബൗട്ട്',
+                    nav_reviews: 'റിവ്യൂകൾ',
+                    nav_location: 'ലൊക്കേഷൻ',
+                    admin_ribbon_title: 'അഡ്മിൻ മോഡ് സജീവമാണ്',
+                    hero_badge: 'ലക്ഷ്വറി ട്രാവൽ • ഉംറ & വിസ • ഹോസ്പിറ്റാലിറ്റി',
+                    hero_headline_sub: 'പ്രീമിയം ഉംറ, വിസ & ഗ്ലോബൽ ട്രാവൽ സർവീസ്',
+                    hero_desc: 'Almudheef Company First lilsiyaha sharika shakhs wahid — ഉംറ തീർത്ഥാടനം, വേഗത്തിലുള്ള വിസ സേവനം, ടിക്കറ്റ് ബുക്കിംഗ്, രുചികരമായ പ്രതിവാര ഭക്ഷണം എന്നിവ മികച്ച നിലവാരത്തിൽ നൽകുന്നു.',
+                    pill_umrah: 'ഉംറ പാക്കേജുകൾ & സിയാറത്ത്',
+                    pill_visa: 'എക്സ്പ്രസ് വിസ സേവനം',
+                    btn_open_insta: 'Instagram തുറക്കുക (@faristoursandtravels)',
+                    btn_open_loc: 'ലൈവ് ലൊക്കേഷൻ തുറക്കുക',
+                    fleet_badge: 'ഞങ്ങളുടെ വാഹനങ്ങൾ',
+                    highlights_kicker: 'പ്രധാന സേവനങ്ങൾ',
+                    highlights_title: 'ഉംറ സർവീസ് & വിസ സർവീസ് ഹൈലൈറ്റുകൾ',
+                    btn_edit_highlights: 'ഉംറ & വിസ വിവരങ്ങൾ മാറ്റുക',
+                    umrah_badge: 'മെയിൻ ഹൈലൈറ്റ് • ഉംറ സർവീസ്',
+                    umrah_title: 'സമ്പൂർണ്ണ ഉംറ തീർത്ഥാടന പാക്കേജുകൾ',
+                    umrah_desc: 'ഹറമിന് സമീപമുള്ള താമസസൗകര്യം, എസി ട്രാൻസ്പോർട്ട്, സിയാറത്ത് യാത്രകൾ, രുചികരമായ ഭക്ഷണം എന്നിവയോടുകൂടിയ അനുഗ്രഹീത ഉംറ യാത്ര.',
+                    umrah_pt1: 'മക്ക & മദീന ഹോട്ടൽ സൗകര്യങ്ങളും സുഗമമായ യാത്രയും',
+                    umrah_pt2: 'കുടുംബങ്ങൾക്കും ഗ്രൂപ്പുകൾക്കും പ്രത്യേക സൗകര്യങ്ങൾ',
+                    umrah_pt3: '24/7 സഹായവും ദൈനംദിന ഫ്രഷ് ഭക്ഷണവും',
+                    visa_badge: 'മെയിൻ ഹൈലൈറ്റ് • വിസ സർവീസ്',
+                    visa_title: 'വേഗതയേറിയതും സുതാര്യവുമായ വിസ സർവീസ്',
+                    visa_desc: 'ഉംറ വിസ, വിസിറ്റ് / ടൂറിസ്റ്റ് വിസ, മറ്റ് യാത്രാ രേഖകൾ എന്നിവ കൃത്യമായും വേഗത്തിലും പൂർത്തിയാക്കി നൽകുന്നു.',
+                    visa_pt1: 'ഉംറ വിസ, ടൂറിസ്റ്റ് / വിസിറ്റ് വിസ & ഇൻഷുറൻസ്',
+                    visa_pt2: 'രേഖകളുടെ കൃത്യമായ പരിശോധനയും അപേക്ഷാ സഹായവും',
+                    visa_pt3: 'ഫോൺ, ഇമെയിൽ, ലൈവ് ലൊക്കേഷൻ വഴി നേരിട്ടുള്ള പിന്തുണ',
+                    updates_kicker: 'പുതിയ അറിയിപ്പുകൾ',
+                    updates_title: 'ഏറ്റവും പുതിയ അപ്ഡേറ്റുകളും ഓഫറുകളും',
+                    updates_sub: 'ഉംറ യാത്രകൾ, വിസ അപ്ഡേറ്റുകൾ, ടിക്കറ്റ് ഓഫറുകൾ എന്നിവ ഇവിടെ കാണാം.',
+                    btn_add_update: 'പുതിയ അപ്ഡേറ്റ് ചേർക്കുക',
+                    admin_update_form_title: 'അഡ്മിൻ: പുതിയ അപ്ഡേറ്റ് ചേർക്കുക / എഡിറ്റ് ചെയ്യുക',
+                    btn_save_update: 'അപ്ഡേറ്റ് സേവ് ചെയ്യുക',
+                    tickets_kicker: 'ടിക്കറ്റ് & പാക്കേജ് നിരക്കുകൾ',
+                    tickets_title: 'ടിക്കറ്റ് പ്രൈസ് ലിസ്റ്റ്',
+                    tickets_sub: 'വിവിധ റൂട്ടുകളുടെയും ഉംറ/വിസ പാക്കേജുകളുടെയും നിരക്കുകൾ ഇവിടെ കാണാം.',
+                    lbl_total_items: 'ആകെ ലിസ്റ്റ്',
+                    ticket_admin_col_title: 'അഡ്മിൻ ടിക്കറ്റ് പ്രൈസ് മാനേജർ',
+                    btn_save_ticket: 'ടിക്കറ്റ് / പാക്കേജ് നിരക്ക് സേവ് ചെയ്യുക',
+                    food_kicker: 'ദിവസേനയുള്ള ഭക്ഷണം',
+                    food_title: 'ആഴ്ചയിലെ ഭക്ഷണ മെനു (തിങ്കൾ – ഞായർ)',
+                    food_sub: 'രാവിലെ, ഉച്ചയ്ക്ക്, രാത്രി എന്നിങ്ങനെ എല്ലാ ദിവസത്തെയും ഭക്ഷണ വിവരങ്ങൾ.',
+                    poster_badge: 'പ്രതിവാര മെനു ഷെഡ്യൂൾ',
+                    poster_title: 'തിങ്കൾ മുതൽ ഞായർ വരെ — രാവിലെ, ഉച്ചയ്ക്ക്, രാത്രി ഭക്ഷണം',
+                    poster_desc: 'ഏത് ദിവസത്തെയും ഭക്ഷണ മെനു കാണാൻ മുകളിലെ ദിവസം ടച്ച് ചെയ്യുക. അഡ്മിന് മെനു എഡിറ്റ് ചെയ്യാം.',
+                    about_kicker: 'ഞങ്ങളെക്കുറിച്ച്',
+                    about_title: 'FARIS TOURS & TRAVELS — വിശ്വാസ്യതയുടെ പര്യായം',
+                    about_desc: 'Almudheef Company First lilsiyaha sharika shakhs wahid എന്ന സ്ഥാപനത്തിന് കീഴിൽ പ്രവർത്തിക്കുന്ന FARIS TOURS & TRAVELS ഉംറ, വിസ, ടിക്കറ്റിംഗ്, ഫുഡ് സർവീസ് എന്നിവ മികച്ച രീതിയിൽ നൽകുന്നു.',
+                    stat_umrah: 'ഉംറ സേവനം',
+                    stat_visa: 'വിസ സർവീസ്',
+                    stat_tickets: 'ടിക്കറ്റിംഗ്',
+                    stat_food: 'ഭക്ഷണ മെനു',
+                    reviews_kicker: 'കസ്റ്റമർ അഭിപ്രായങ്ങൾ',
+                    reviews_title: 'കസ്റ്റമർ റിവ്യൂ പേജ്',
+                    reviews_sub: 'നിങ്ങളുടെ വിലയേറിയ അഭിപ്രായങ്ങളും റേറ്റിംഗും ഇവിടെ രേഖപ്പെടുത്തുക.',
+                    lbl_reviews_count: 'റിവ്യൂകൾ',
+                    review_form_title: 'പുതിയ റിവ്യൂ ചേർക്കുക',
+                    lbl_your_name: 'നിങ്ങളുടെ പേര്',
+                    lbl_service: 'സർവീസ്',
+                    lbl_rating: 'റേറ്റിംഗ്',
+                    lbl_comment: 'അഭിപ്രായം',
+                    btn_submit_review: 'റിവ്യൂ സമർപ്പിക്കുക',
+                    loc_badge: 'ലൈവ് ലൊക്കേഷൻ & കോൺടാക്ട്',
+                    loc_title: 'FARIS TOURS & TRAVELS ലൊക്കേഷൻ & ബന്ധപ്പെടാൻ',
+                    loc_desc: 'ലൈവ് ലൊക്കേഷൻ തുറക്കാനും നേരിട്ട് വിളിക്കാനും ഇമെയിൽ അയക്കാനും ഇൻസ്റ്റാഗ്രാം കാണാനും താഴെ ടച്ച് ചെയ്യുക.',
+                    loc_card_title: 'Google Maps ലൈവ് ലൊക്കേഷൻ',
+                    loc_card_sub: 'Almudheef Company First lilsiyaha sharika shakhs wahid — FARIS TOURS & TRAVELS',
+                    admin_modal_title: 'അഡ്മിൻ ലോഗിൻ',
+                    admin_modal_sub: 'അഡ്മിന് മാത്രം അപ്ഡേറ്റുകൾ, നിരക്കുകൾ, മെനു എന്നിവ മാറ്റാൻ സാധിക്കും.',
+                    lbl_username: 'യൂസർനേം',
+                    lbl_password: 'പാസ്‌വേഡ്',
+                    btn_login_submit: 'അഡ്മിൻ കൺട്രോൾ തുറക്കുക',
+                    all_days: 'എല്ലാ ദിവസവും',
+                    breakfast: 'രാവിലെ',
+                    lunch: 'ഉച്ചയ്ക്ക്',
+                    dinner: 'രാത്രി',
+                    book_btn: 'ബുക്ക് ചെയ്യുക',
+                    pin_btn: 'പിൻ',
+                    delete_btn: 'നീക്കം ചെയ്യുക',
+                    edit_btn: 'എഡിറ്റ്',
+                    no_updates: 'നിലവിൽ അപ്ഡേറ്റുകൾ ഒന്നുമില്ല.',
+                    no_tickets: 'നിലവിൽ ടിക്കറ്റ് നിരക്കുകൾ ചേർത്തിട്ടില്ല.',
+                    toast_admin_ok: 'അഡ്മിൻ ലോഗിൻ വിജയകരമായി പൂർത്തിയായി!',
+                    toast_admin_err: 'തെറ്റായ യൂസർനേം അല്ലെങ്കിൽ പാസ്‌വേഡ്!',
+                    toast_admin_out: 'അഡ്മിൻ സെഷൻ അവസാനിച്ചു.',
+                    toast_admin_req: 'അഡ്മിൻ ലോഗിൻ (faristoursandtravels / 0544672997) ആവശ്യമാണ്.',
+                    toast_saved: 'വിവരങ്ങൾ വിജയകരമായി സേവ് ചെയ്തു!',
+                    toast_deleted: 'നീക്കം ചെയ്തു!',
+                    toast_review_ok: 'നിങ്ങളുടെ റിവ്യൂ വിജയകരമായി ചേർത്തു!'
+                },
+                en: {
+                    top_live_loc: 'Live Location',
+                    admin_login_cta: 'Admin Login',
+                    admin_logo_trigger_full: 'Admin Logo Login (Manage Updates, Prices & Menu)',
+                    logout_btn: 'Logout',
+                    nav_home: 'Home',
+                    nav_umrah_visa: 'Umrah & Visa',
+                    nav_updates: 'Updates',
+                    nav_tickets: 'Ticket Prices',
+                    nav_food: 'Food Menu',
+                    nav_about: 'About',
+                    nav_reviews: 'Reviews',
+                    nav_location: 'Location',
+                    admin_ribbon_title: 'Admin Mode Active',
+                    hero_badge: 'Luxury Travel • Umrah & Visa • Hospitality',
+                    hero_headline_sub: 'Premium Umrah, Visa & Global Travel Concierge',
+                    hero_desc: 'Almudheef Company First lilsiyaha sharika shakhs wahid — delivering seamless Umrah pilgrimages, rapid visa processing, flight & transport ticketing, and wholesome weekly meals with royal care.',
+                    pill_umrah: 'Umrah Packages & Ziyarat',
+                    pill_visa: 'Express Visa Assistance',
+                    btn_open_insta: 'Open Instagram (@faristoursandtravels)',
+                    btn_open_loc: 'Open Live Location',
+                    fleet_badge: 'Signature Fleet',
+                    highlights_kicker: 'Signature Pillars',
+                    highlights_title: 'Umrah Service & Visa Service Highlights',
+                    btn_edit_highlights: 'Edit Umrah & Visa Text',
+                    umrah_badge: 'MAIN HIGHLIGHT • UMRAH SERVICE',
+                    umrah_title: 'Complete Sacred Umrah Pilgrimage Packages',
+                    umrah_desc: 'Experience a serene, spiritually fulfilling Umrah journey with comfortable accommodation near the Haramain, luxury AC transport, guided Ziyarat tours, and freshly prepared meals.',
+                    umrah_pt1: 'Makkah & Madinah Hotel Arrangements & VIP Transfers',
+                    umrah_pt2: 'Dedicated Group & Family Umrah Coordination',
+                    umrah_pt3: '24/7 Multilingual Support & Fresh Daily Cuisine',
+                    visa_badge: 'MAIN HIGHLIGHT • VISA SERVICE',
+                    visa_title: 'Fast, Transparent & Reliable Visa Services',
+                    visa_desc: 'From Umrah & visit visas to GCC & international travel documentation, our specialists handle application review, scheduling, and status follow-ups smoothly.',
+                    visa_pt1: 'Umrah Visa, Tourist / Visit Visa & Travel Insurance',
+                    visa_pt2: 'Complete Document Checklist & Error-Free Filing',
+                    visa_pt3: 'Direct Guidance via Phone, Email & Live Location',
+                    updates_kicker: 'Agency Bulletin',
+                    updates_title: 'Latest Updates & Special Offers',
+                    updates_sub: 'Fresh announcements on Umrah departures, visa rules, and seasonal travel fares.',
+                    btn_add_update: 'Add New Update',
+                    admin_update_form_title: 'Admin: Publish or Edit Agency Update',
+                    btn_save_update: 'Save Update',
+                    tickets_kicker: 'Transparent Fares',
+                    tickets_title: 'Ticket & Package Prices',
+                    tickets_sub: 'Live routes, Umrah & visa service tariffs. Admin can add, edit, or remove entries anytime.',
+                    lbl_total_items: 'Total Listed',
+                    ticket_admin_col_title: 'Admin Ticket Price Manager',
+                    btn_save_ticket: 'Save Ticket / Package Price',
+                    food_kicker: 'Fresh Daily Kitchen',
+                    food_title: 'Weekly Food Menu (Monday – Sunday)',
+                    food_sub: 'Morning, Afternoon & Night meals crafted fresh every day of the week.',
+                    poster_badge: 'Weekly Menu Schedule',
+                    poster_title: 'Monday to Sunday Fresh Meals — Morning, Afternoon & Night',
+                    poster_desc: 'Tap any day above to inspect Morning, Afternoon, and Night dishes. Logged-in Admins can edit any day’s meal items directly.',
+                    about_kicker: 'About Our Agency',
+                    about_title: 'FARIS TOURS & TRAVELS — Trusted Excellence in Travel & Hospitality',
+                    about_desc: 'Operating under Almudheef Company First lilsiyaha sharika shakhs wahid, FARIS TOURS & TRAVELS is committed to delivering dependable Umrah journeys, smooth visa processing, flight & road ticketing, and comforting daily meals.',
+                    stat_umrah: 'Umrah Care',
+                    stat_visa: 'Visa Desk',
+                    stat_tickets: 'Ticketing',
+                    stat_food: 'Daily Food',
+                    reviews_kicker: 'Traveler Voices',
+                    reviews_title: 'Customer Reviews',
+                    reviews_sub: 'Share your experience with our Umrah, Visa, ticketing, or food services.',
+                    lbl_reviews_count: 'Reviews',
+                    review_form_title: 'Write a Review',
+                    lbl_your_name: 'Your Name',
+                    lbl_service: 'Service',
+                    lbl_rating: 'Rating',
+                    lbl_comment: 'Your Review',
+                    btn_submit_review: 'Submit Review',
+                    loc_badge: 'Live Location & Instant Contact',
+                    loc_title: 'Visit or Reach FARIS TOURS & TRAVELS',
+                    loc_desc: 'Tap any button below to open our live Google Maps location, call directly, send an email, or visit our Instagram page.',
+                    loc_card_title: 'Google Maps Live Location',
+                    loc_card_sub: 'Almudheef Company First lilsiyaha sharika shakhs wahid — FARIS TOURS & TRAVELS',
+                    admin_modal_title: 'Administrator Login',
+                    admin_modal_sub: 'Only Admin can add or edit updates, prices, and menus.',
+                    lbl_username: 'Username',
+                    lbl_password: 'Password',
+                    btn_login_submit: 'Unlock Admin Controls',
+                    all_days: 'All Days',
+                    breakfast: 'Morning',
+                    lunch: 'Afternoon',
+                    dinner: 'Night',
+                    book_btn: 'Book Now',
+                    pin_btn: 'Pin',
+                    delete_btn: 'Delete',
+                    edit_btn: 'Edit',
+                    no_updates: 'No updates posted yet.',
+                    no_tickets: 'No ticket prices listed yet.',
+                    toast_admin_ok: 'Admin login successful!',
+                    toast_admin_err: 'Invalid username or password!',
+                    toast_admin_out: 'Logged out of Admin session.',
+                    toast_admin_req: 'Admin Login (faristoursandtravels / 0544672997) required.',
+                    toast_saved: 'Saved successfully!',
+                    toast_deleted: 'Removed successfully!',
+                    toast_review_ok: 'Thank you! Your review has been added.'
+                },
+                ar: {
+                    top_live_loc: 'الموقع المباشر',
+                    admin_login_cta: 'دخول الإدارة',
+                    admin_logo_trigger_full: 'دخول شعار الإدارة (إدارة التحديثات والأسعار والقائمة)',
+                    logout_btn: 'خروج',
+                    nav_home: 'الرئيسية',
+                    nav_umrah_visa: 'العمرة والتأشيرات',
+                    nav_updates: 'التحديثات',
+                    nav_tickets: 'أسعار التذاكر',
+                    nav_food: 'قائمة الطعام',
+                    nav_about: 'من نحن',
+                    nav_reviews: 'التقييمات',
+                    nav_location: 'الموقع',
+                    admin_ribbon_title: 'وضع الإدارة نشط',
+                    hero_badge: 'سفر فاخر • عمرة وتأشيرات • ضيافة',
+                    hero_headline_sub: 'خدمات العمرة والتأشيرات والسفر المتميزة',
+                    hero_desc: 'شركة المضيف الأولى للسياحة شركة شخص واحد — نقدم رحلات العمرة المريحة، خدمات التأشيرات السريعة، حجوزات التذاكر، والوجبات الأسبوعية الطازجة.',
+                    pill_umrah: 'باقات العمرة والزيارة',
+                    pill_visa: 'خدمات التأشيرات السريعة',
+                    btn_open_insta: 'فتح إنستغرام (@faristoursandtravels)',
+                    btn_open_loc: 'فتح الموقع المباشر',
+                    fleet_badge: 'أسطولنا المميز',
+                    highlights_kicker: 'الخدمات الرئيسية',
+                    highlights_title: 'أبرز خدمات العمرة وخدمات التأشيرات',
+                    btn_edit_highlights: 'تعديل نصوص العمرة والتأشيرات',
+                    umrah_badge: 'أبرز خدمة • خدمة العمرة',
+                    umrah_title: 'باقات متكاملة لرحلات العمرة المباركة',
+                    umrah_desc: 'استمتع برحلة عمرة مريحة مع إقامة قريبة من الحرمين الشريفين، ونقل مكيف، وجولات زيارة، ووجبات طازجة يومياً.',
+                    umrah_pt1: 'حجوزات الفنادق في مكة والمدينة وتنقلات مريحة',
+                    umrah_pt2: 'تنظيم خاص للعائلات والمجموعات',
+                    umrah_pt3: 'دعم متواصل ووجبات طازجة يومياً',
+                    visa_badge: 'أبرز خدمة • خدمة التأشيرات',
+                    visa_title: 'خدمات تأشيرات سريعة وموثوقة',
+                    visa_desc: 'نوفر متابعة دقيقة لتأشيرات العمرة والزيارة والسياحة مع تدقيق كامل للمستندات.',
+                    visa_pt1: 'تأشيرات العمرة والزيارة والسياحة والتأمين',
+                    visa_pt2: 'مراجعة المستندات وتقديم الطلبات بدقة',
+                    visa_pt3: 'تواصل مباشر عبر الهاتف والبريد والموقع المباشر',
+                    updates_kicker: 'آخر الأخبار',
+                    updates_title: 'أحدث التحديثات والعروض',
+                    updates_sub: 'إعلانات رحلات العمرة وتحديثات التأشيرات والعروض الموسمية.',
+                    btn_add_update: 'إضافة تحديث جديد',
+                    admin_update_form_title: 'الإدارة: إضافة أو تعديل تحديث',
+                    btn_save_update: 'حفظ التحديث',
+                    tickets_kicker: 'الأسعار والباقات',
+                    tickets_title: 'أسعار التذاكر والباقات',
+                    tickets_sub: 'أسعار المسارات وخدمات العمرة والتأشيرات مع إمكانية الإضافة والتعديل للإدارة.',
+                    lbl_total_items: 'الإجمالي',
+                    ticket_admin_col_title: 'إدارة أسعار التذاكر',
+                    btn_save_ticket: 'حفظ سعر التذكرة / الباقة',
+                    food_kicker: 'المطبخ اليومي',
+                    food_title: 'قائمة الطعام الأسبوعية (الإثنين – الأحد)',
+                    food_sub: 'وجبات الصباح والظهر والمساء طازجة طوال أيام الأسبوع.',
+                    poster_badge: 'جدول القائمة الأسبوعية',
+                    poster_title: 'من الإثنين إلى الأحد — وجبات الصباح والظهر والمساء',
+                    poster_desc: 'اختر أي يوم لعرض وجبات الصباح والظهر والمساء، ويمكن للإدارة تعديل أي وجبة.',
+                    about_kicker: 'عن الوكالة',
+                    about_title: 'فارس للسياحة والسفر — ثقة وجودة في الضيافة',
+                    about_desc: 'تعمل فارس للسياحة والسفر تحت شركة المضيف الأولى للسياحة شركة شخص واحد لتقديم أفضل خدمات العمرة والتأشيرات والتذاكر والطعام.',
+                    stat_umrah: 'العمرة',
+                    stat_visa: 'التأشيرات',
+                    stat_tickets: 'التذاكر',
+                    stat_food: 'الطعام',
+                    reviews_kicker: 'آراء المسافرين',
+                    reviews_title: 'تقييمات العملاء',
+                    reviews_sub: 'شاركنا تجربتك في خدمات العمرة والتأشيرات والتذاكر والطعام.',
+                    lbl_reviews_count: 'التقييمات',
+                    review_form_title: 'أضف تقييمك',
+                    lbl_your_name: 'الاسم',
+                    lbl_service: 'الخدمة',
+                    lbl_rating: 'التقييم',
+                    lbl_comment: 'تعليقك',
+                    btn_submit_review: 'إرسال التقييم',
+                    loc_badge: 'الموقع المباشر والتواصل',
+                    loc_title: 'تفضل بزيارة أو التواصل مع فارس للسياحة والسفر',
+                    loc_desc: 'اضغط على أي زر لفتح الموقع المباشر على خرائط جوجل أو الاتصال أو إرسال بريد أو زيارة إنستغرام.',
+                    loc_card_title: 'الموقع المباشر على خرائط جوجل',
+                    loc_card_sub: 'شركة المضيف الأولى للسياحة شركة شخص واحد — FARIS TOURS & TRAVELS',
+                    admin_modal_title: 'تسجيل دخول الإدارة',
+                    admin_modal_sub: 'يحق للإدارة فقط إضافة أو تعديل التحديثات والأسعار والقوائم.',
+                    lbl_username: 'اسم المستخدم',
+                    lbl_password: 'كلمة المرور',
+                    btn_login_submit: 'فتح لوحة الإدارة',
+                    all_days: 'كل الأيام',
+                    breakfast: 'الصباح',
+                    lunch: 'الظهر',
+                    dinner: 'المساء',
+                    book_btn: 'احجز الآن',
+                    pin_btn: 'تثبيت',
+                    delete_btn: 'حذف',
+                    edit_btn: 'تعديل',
+                    no_updates: 'لا توجد تحديثات حالياً.',
+                    no_tickets: 'لا توجد أسعار مضافة حالياً.',
+                    toast_admin_ok: 'تم تسجيل دخول الإدارة بنجاح!',
+                    toast_admin_err: 'اسم المستخدم أو كلمة المرور غير صحيحة!',
+                    toast_admin_out: 'تم تسجيل الخروج من وضع الإدارة.',
+                    toast_admin_req: 'مطلوب تسجيل دخول الإدارة (faristoursandtravels / 0544672997).',
+                    toast_saved: 'تم الحفظ بنجاح!',
+                    toast_deleted: 'تم الحذف بنجاح!',
+                    toast_review_ok: 'شكراً لك! تم إضافة تقييمك.'
+                },
+                hi: {
+                    top_live_loc: 'लाइव लोकेशन',
+                    admin_login_cta: 'Admin Login',
+                    admin_logo_trigger_full: 'Admin Logo Login (अपडेट, टिकट रेट और मेनू बदलें)',
+                    logout_btn: 'Logout',
+                    nav_home: 'होम',
+                    nav_umrah_visa: 'उमराह और वीज़ा',
+                    nav_updates: 'अपडेट्स',
+                    nav_tickets: 'टिकट प्राइस',
+                    nav_food: 'फूड मेनू',
+                    nav_about: 'अबाउट',
+                    nav_reviews: 'रिव्यू',
+                    nav_location: 'लोकेशन',
+                    admin_ribbon_title: 'Admin Mode सक्रिय है',
+                    hero_badge: 'लक्ज़री ट्रैवल • उमराह व वीज़ा • हॉस्पिटैलिटी',
+                    hero_headline_sub: 'प्रीमियम उमराह, वीज़ा और ग्लोबल ट्रैवल सर्विस',
+                    hero_desc: 'Almudheef Company First lilsiyaha sharika shakhs wahid — आसान उमराह यात्रा, तेज़ वीज़ा सेवा, टिकट बुकिंग और साप्ताहिक स्वादिष्ट भोजन सेवा।',
+                    pill_umrah: 'उमराह पैकेज व ज़ियारत',
+                    pill_visa: 'एक्सप्रेस वीज़ा सहायता',
+                    btn_open_insta: 'Instagram खोलें (@faristoursandtravels)',
+                    btn_open_loc: 'लाइव लोकेशन खोलें',
+                    fleet_badge: 'हमारी फ्लीट',
+                    highlights_kicker: 'मुख्य सेवाएं',
+                    highlights_title: 'उमराह सर्विस और वीज़ा सर्विस हाइलाइट्स',
+                    btn_edit_highlights: 'उमराह व वीज़ा टेक्स्ट बदलें',
+                    umrah_badge: 'मेन हाइलाइट • उमराह सर्विस',
+                    umrah_title: 'संपूर्ण उमराह यात्रा पैकेज',
+                    umrah_desc: 'हरमैन के करीब आरामदायक आवास, एसी ट्रांसपोर्ट, ज़ियारत और ताज़ा भोजन के साथ शानदार उमराह यात्रा।',
+                    umrah_pt1: 'मक्का और मदीना होटल व आसान ट्रांसफर',
+                    umrah_pt2: 'परिवार और ग्रुप के लिए विशेष व्यवस्था',
+                    umrah_pt3: '24/7 सहायता और ताज़ा दैनिक भोजन',
+                    visa_badge: 'मेन हाइलाइट • वीज़ा सर्विस',
+                    visa_title: 'तेज़, पारदर्शी और भरोसेमंद वीज़ा सेवाएं',
+                    visa_desc: 'उमराह वीज़ा, विज़िट/टूरिस्ट वीज़ा और यात्रा दस्तावेज़ों की संपूर्ण व सटीक सहायता।',
+                    visa_pt1: 'उमराह वीज़ा, टूरिस्ट/विज़िट वीज़ा और ट्रैवल इंश्योरेंस',
+                    visa_pt2: 'दस्तावेज़ जांच और त्रुटि रहित आवेदन',
+                    visa_pt3: 'फ़ोन, ईमेल और लाइव लोकेशन द्वारा सीधा मार्गदर्शन',
+                    updates_kicker: 'ताज़ा अपडेट्स',
+                    updates_title: 'लेटेस्ट अपडेट्स और ऑफ़र्स',
+                    updates_sub: 'उमराह प्रस्थान, वीज़ा अपडेट और ट्रैवल ऑफ़र्स की ताज़ा जानकारी।',
+                    btn_add_update: 'नया अपडेट जोड़ें',
+                    admin_update_form_title: 'Admin: नया अपडेट जोड़ें या बदलें',
+                    btn_save_update: 'अपडेट सेव करें',
+                    tickets_kicker: 'टिकट और पैकेज रेट',
+                    tickets_title: 'टिकट प्राइस लिस्ट',
+                    tickets_sub: 'रूट, उमराह और वीज़ा पैकेज की कीमतें यहाँ देखें।',
+                    lbl_total_items: 'कुल सूची',
+                    ticket_admin_col_title: 'Admin टिकट प्राइस मैनेजर',
+                    btn_save_ticket: 'टिकट / पैकेज प्राइस सेव करें',
+                    food_kicker: 'दैनिक भोजन',
+                    food_title: 'साप्ताहिक फूड मेनू (सोमवार – रविवार)',
+                    food_sub: 'सुबह, दोपहर और रात का ताज़ा भोजन हर दिन।',
+                    poster_badge: 'साप्ताहिक मेनू शेड्यूल',
+                    poster_title: 'सोमवार से रविवार — सुबह, दोपहर और रात का भोजन',
+                    poster_desc: 'किसी भी दिन का मेनू देखने के लिए ऊपर दिन पर टैप करें। Admin मेनू बदल सकता है।',
+                    about_kicker: 'हमारे बारे में',
+                    about_title: 'FARIS TOURS & TRAVELS — भरोसेमंद ट्रैवल व हॉस्पिटैलिटी',
+                    about_desc: 'Almudheef Company First lilsiyaha sharika shakhs wahid के अंतर्गत FARIS TOURS & TRAVELS उमराह, वीज़ा, टिकटिंग और भोजन सेवाएं प्रदान करता है।',
+                    stat_umrah: 'उमराह सेवा',
+                    stat_visa: 'वीज़ा सेवा',
+                    stat_tickets: 'टिकटिंग',
+                    stat_food: 'फूड मेनू',
+                    reviews_kicker: 'ग्राहकों की राय',
+                    reviews_title: 'कस्टमर रिव्यू',
+                    reviews_sub: 'हमारी उमराह, वीज़ा, टिकट या फूड सेवा का अनुभव साझा करें।',
+                    lbl_reviews_count: 'रिव्यू',
+                    review_form_title: 'रिव्यू लिखें',
+                    lbl_your_name: 'आपका नाम',
+                    lbl_service: 'सेवा',
+                    lbl_rating: 'रेटिंग',
+                    lbl_comment: 'आपका रिव्यू',
+                    btn_submit_review: 'रिव्यू भेजें',
+                    loc_badge: 'लाइव लोकेशन और संपर्क',
+                    loc_title: 'FARIS TOURS & TRAVELS लोकेशन व संपर्क',
+                    loc_desc: 'लाइव Google Maps लोकेशन खोलने, कॉल करने, ईमेल करने या Instagram देखने के लिए नीचे टैप करें।',
+                    loc_card_title: 'Google Maps लाइव लोकेशन',
+                    loc_card_sub: 'Almudheef Company First lilsiyaha sharika shakhs wahid — FARIS TOURS & TRAVELS',
+                    admin_modal_title: 'Admin Login',
+                    admin_modal_sub: 'केवल Admin ही अपडेट, टिकट रेट और मेनू बदल सकता है।',
+                    lbl_username: 'Username',
+                    lbl_password: 'Password',
+                    btn_login_submit: 'Admin Controls खोलें',
+                    all_days: 'सभी दिन',
+                    breakfast: 'सुबह',
+                    lunch: 'दोपहर',
+                    dinner: 'रात',
+                    book_btn: 'बुक करें',
+                    pin_btn: 'पिन',
+                    delete_btn: 'हटाएं',
+                    edit_btn: 'बदलें',
+                    no_updates: 'कोई अपडेट उपलब्ध नहीं है।',
+                    no_tickets: 'कोई टिकट प्राइस उपलब्ध नहीं है।',
+                    toast_admin_ok: 'Admin Login सफल रहा!',
+                    toast_admin_err: 'गलत Username या Password!',
+                    toast_admin_out: 'Admin से लॉगआउट हो गया।',
+                    toast_admin_req: 'Admin Login (faristoursandtravels / 0544672997) आवश्यक है।',
+                    toast_saved: 'सफलतापूर्वक सेव हो गया!',
+                    toast_deleted: 'हटा दिया गया!',
+                    toast_review_ok: 'धन्यवाद! आपका रिव्यू जोड़ दिया गया है।'
+                }
+            };
+
+            /* ==================== DEFAULT DATA (PERSISTED IN LOCALSTORAGE) ==================== */
+            const DEFAULT_UPDATES = [
+                {
+                    id: 101,
+                    category: 'Umrah',
+                    badge: 'Priority Seats',
+                    title: 'Special Umrah Departure & Haram Stay Assistance',
+                    details: 'Comfortable hotel coordination, smooth transport, and guided support for families and groups.'
+                },
+                {
+                    id: 102,
+                    category: 'Visa',
+                    badge: 'Fast Track',
+                    title: 'Umrah, Visit & Tourist Visa Processing Desk',
+                    details: 'Complete checklist guidance and timely application processing with direct phone & email support.'
+                },
+                {
+                    id: 103,
+                    category: 'Food & Fleet',
+                    badge: 'Daily Fresh',
+                    title: 'Weekly Morning, Afternoon & Night Meal Plan',
+                    details: 'Wholesome daily meals prepared fresh with dedicated food desk support on +966 56 950 5015.'
+                }
+            ];
+
+            const DEFAULT_TICKETS = [
+                { id: 201, from: 'Umrah Package', to: 'Makkah & Madinah', type: 'Umrah Service', price: 'Contact Desk', note: 'Hotel, transport & guidance options' },
+                { id: 202, from: 'Visa Assistance', to: 'Umrah / Visit / Travel', type: 'Visa Service', price: 'Fast Processing', note: 'Document check & filing support' },
+                { id: 203, from: 'Riyadh / Jeddah', to: 'Kochi / Kozhikode', type: 'Flight Ticket', price: 'Best Fare', note: 'One-way & return options' },
+                { id: 204, from: 'Weekly Meal Plan', to: 'Mon – Sun (3 Meals/Day)', type: 'Food Service', price: 'Daily Menu', note: 'Morning, Afternoon & Night' }
+            ];
+
+            const DEFAULT_WEEKLY_MENU = [
+                {
+                    id: 'MON',
+                    accent: 'bg-emeraldLux',
+                    day: { ml: 'തിങ്കൾ | MONDAY', en: 'Monday', ar: 'الإثنين', hi: 'सोमवार (Monday)' },
+                    tab: { ml: 'തിങ്കൾ', en: 'Mon', ar: 'الإثنين', hi: 'सोम' },
+                    b: { ml: 'ഇഡ്ഡലി, സാമ്പാർ, പുട്ട്, കടല, ഉപ്പുമാവ്, ചട്ണി', en: 'Idli, Sambar, Puttu, Kadala, Uppumavu, Chutney', ar: 'إدلي، سامبار، بوتو، كادالا، أبومابو، شاتني', hi: 'इडली, सांभर, पुट्टू, कडला, उपमा, चटनी' },
+                    l: { ml: 'സാദാ ചോറ്, പാലക്ക് കറി, മീൻ കറി, ഉപ്പേരി, ചിക്കൻ പൊരിച്ചത്, പപ്പടം, അച്ചാർ', en: 'Steamed Rice, Palak Curry, Fish Curry, Thoran, Fried Chicken, Pappadam, Pickle', ar: 'أرز، سبانخ، سمك، ثوران، دجاج مقلي، بابادام، مخلل', hi: 'चावल, पालक करी, फिश करी, उपेरी, फ्राइड चिकन, पापड़, अचार' },
+                    d: { ml: 'പൊറോട്ട, ചപ്പാത്തി, നെയ്ച്ചോറ്, സാദാ ചോറ്, ചിക്കൻ ചില്ലി, വെജിറ്റബിൾ കുറുമ, കഞ്ഞി, ഫിഷ് കറി, ഫ്രൂട്സ്', en: 'Porotta, Chapathi, Ghee Rice, Rice, Chilli Chicken, Veg Kuruma, Kanji, Fish Curry, Fruits', ar: 'بوروتا، شباتي، أرز بالسمن، أرز، دجاج حار، كورما خضار، كانجي، سمك، فواكه', hi: 'परोठा, चपाती, घी राइस, चावल, चिल्ली चिकन, वेज कुरमा, कांजी, फिश करी, फल' }
+                },
+                {
+                    id: 'TUE',
+                    accent: 'bg-sapphireLight',
+                    day: { ml: 'ചൊവ്വ | TUESDAY', en: 'Tuesday', ar: 'الثلاثاء', hi: 'मंगलवार (Tuesday)' },
+                    tab: { ml: 'ചൊവ്വ', en: 'Tue', ar: 'الثلاثاء', hi: 'मंगल' },
+                    b: { ml: 'ദോശ, പൂരി, മക്രോണി, ചെറുപയർ ബാജി', en: 'Dosa, Poori, Macaroni, Moong Bhaji', ar: 'دوسا، بوري، معكرونة، باجي العدس الأخضر', hi: 'डोसा, पूरी, मैकरोनी, मूंग भाजी' },
+                    l: { ml: 'സാദാ ചോറ്, നെയ്ച്ചോറ്, ഒട്ടക കറി, പച്ചക്കറി ഉപ്പേരി, മീൻ പൊരിച്ചത്, പായസം, പപ്പടം, അച്ചാർ', en: 'Rice, Ghee Rice, Camel Curry, Veg Stir-Fry, Fried Fish, Payasam, Pappadam, Pickle', ar: 'أرز، أرز بالسمن، لحم جمل، خضار، سمك مقلي، باياسام، بابادام، مخلل', hi: 'चावल, घी राइस, कैमल करी, वेज उपेरी, फ्राइड फिश, पायसम, पापड़, अचार' },
+                    d: { ml: 'പൊറോട്ട, ചപ്പാത്തി, കപ്സ, സാദാ ചോറ്, ചിക്കൻ കുറുമ, പച്ചക്കറി, ഫിഷ് കറി, കഞ്ഞി, ഫ്രൂട്സ്', en: 'Porotta, Chapathi, Kabsa, Rice, Chicken Kuruma, Veggies, Fish Curry, Kanji, Fruits', ar: 'بوروتا، شباتي، كبسة، أرز، كورما دجاج، خضار، سمك، كانجي، فواكه', hi: 'परोठा, चपाती, कप्सा, चावल, चिकन कुरमा, सब्ज़ी, फिश करी, कांजी, फल' }
+                },
+                {
+                    id: 'WED',
+                    accent: 'bg-royalGold text-sapphire',
+                    day: { ml: 'ബുധൻ | WEDNESDAY', en: 'Wednesday', ar: 'الأربعاء', hi: 'बुधवार (Wednesday)' },
+                    tab: { ml: 'ബുധൻ', en: 'Wed', ar: 'الأربعاء', hi: 'बुध' },
+                    b: { ml: 'നൂൽപ്പുട്ട്, ദോശ, നെയ് പത്തിരി, മുട്ടക്കറി, ഗ്രീൻ പീസ്', en: 'Idiyappam, Dosa, Ney Pathiri, Egg Curry, Green Peas', ar: 'إديابام، دوسا، باثري، كاري بيض، بازلاء', hi: 'इडियप्पम, डोसा, नेय पथरी, एग करी, मटर' },
+                    l: { ml: 'സാദാ ചോറ്, ഉപ്പേരി, രസം, പച്ചക്കറി, മീൻ കറി, അച്ചാർ, പപ്പടം, ഫിഷ് ഫ്രൈ, ചിക്കൻ ഫ്രൈ', en: 'Rice, Thoran, Rasam, Veggies, Fish Curry, Pickle, Pappadam, Fish Fry, Chicken Fry', ar: 'أرز، خضار، راسام، كاري سمك، مخلل، بابادام، سمك مقلي، دجاج مقلي', hi: 'चावल, उपेरी, रसम, सब्ज़ी, फिश करी, अचार, पापड़, फिश फ्राई, चिकन फ्राई' },
+                    d: { ml: 'ചപ്പാത്തി, പൊറോട്ട, ഫ്രൈഡ് റൈസ്, സാദാ ചോറ്, കഞ്ഞി, ഫ്രൂട്സ്, മട്ടൻ കറി, മീൻ കറി', en: 'Chapathi, Porotta, Fried Rice, Rice, Kanji, Fruits, Mutton Curry, Fish Curry', ar: 'شباتي، بوروتا، أرز مقلي، أرز، كانجي، فواكه، لحم ضأن، سمك', hi: 'चपाती, परोठा, फ्राइड राइस, चावल, कांजी, फल, मटन करी, फिश करी' }
+                },
+                {
+                    id: 'THU',
+                    accent: 'bg-sapphire',
+                    day: { ml: 'വ്യാഴം | THURSDAY', en: 'Thursday', ar: 'الخميس', hi: 'गुरुवार (Thursday)' },
+                    tab: { ml: 'വ്യാഴം', en: 'Thu', ar: 'الخميس', hi: 'गुरु' },
+                    b: { ml: 'പുട്ട്, ഇഡ്ഡലി, അലിസ്, കടല, സാമ്പാർ, ചട്ണി', en: 'Puttu, Idli, Alees, Kadala, Sambar, Chutney', ar: 'بوتو، إدلي، أليس، كادالا، سامبار، شاتني', hi: 'पुट्टू, इडली, अलीज़, कडला, सांभर, चटनी' },
+                    l: { ml: 'സാദാ ചോറ്, പച്ചക്കറി, മീൻ കറി, പച്ചടി, ഉപ്പേരി, മീൻ പൊരിച്ചത്, ചിക്കൻ പൊരിച്ചത്, പപ്പടം, അച്ചാർ, രസം', en: 'Rice, Veggies, Fish Curry, Pachadi, Thoran, Fried Fish, Fried Chicken, Pappadam, Pickle, Rasam', ar: 'أرز، خضار، سمك، باشادي، ثوران، سمك ودجاج مقلي، بابادام، مخلل، راسام', hi: 'चावल, सब्ज़ी, फिश करी, पचड़ी, उपेरी, फ्राइड फिश व चिकन, पापड़, अचार, रसम' },
+                    d: { ml: 'നെയ്ച്ചോറ്, പൊറോട്ട, ചപ്പാത്തി, സാദാ ചോറ്, ബീഫ് കറി, പച്ചക്കറി, ഫിഷ് കറി, കഞ്ഞി, ഫ്രൂട്സ്', en: 'Ghee Rice, Porotta, Chapathi, Rice, Beef Curry, Veggies, Fish Curry, Kanji, Fruits', ar: 'أرز بالسمن، بوروتا، شباتي، أرز، كاري لحم، خضار، سمك، كانجي، فواكه', hi: 'घी राइस, परोठा, चपाती, चावल, बीफ करी, सब्ज़ी, फिश करी, कांजी, फल' }
+                },
+                {
+                    id: 'FRI',
+                    accent: 'bg-emeraldLux',
+                    day: { ml: 'വെള്ളി | FRIDAY', en: 'Friday', ar: 'الجمعة', hi: 'शुक्रवार (Friday)' },
+                    tab: { ml: 'വെള്ളി', en: 'Fri', ar: 'الجمعة', hi: 'शुक्र' },
+                    b: { ml: 'ഗോതമ്പ് പൊറോട്ട, ഇഡ്ഡലി, ഉപ്പുമാവ്, ഗ്രീൻ പീസ്, സാമ്പാർ, ചട്ണി', en: 'Wheat Porotta, Idli, Uppumavu, Green Peas, Sambar, Chutney', ar: 'بوروتا قمح، إدلي، أبومابو، بازلاء، سامبار، شاتني', hi: 'गेहूं परोठा, इडली, उपमा, मटर, सांभर, चटनी' },
+                    l: { ml: 'സാദാ ചോറ്, ബിരിയാണി, പച്ചക്കറി ഉപ്പേരി, ഫിഷ് ഫ്രൈ, സാലഡ്, പായസം, പപ്പടം, അച്ചാർ', en: 'Rice, Biryani, Veg Thoran, Fish Fry, Salad, Payasam, Pappadam, Pickle', ar: 'أرز، برياني، خضار، سمك مقلي، سلطة، باياسام، بابادام، مخلل', hi: 'चावल, बिरयानी, वेज उपेरी, फिश फ्राई, सलाद, पायसम, पापड़, अचार' },
+                    d: { ml: 'പൊറോട്ട, ചപ്പാത്തി, കപ്സ, സാദാ ചോറ്, മുട്ടക്കറി, പച്ചക്കറി, ഫിഷ് കറി, കഞ്ഞി, ഫ്രൂട്സ്', en: 'Porotta, Chapathi, Kabsa, Rice, Egg Curry, Veggies, Fish Curry, Kanji, Fruits', ar: 'بوروتا، شباتي، كبسة، أرز، كاري بيض، خضار، سمك، كانجي، فواكه', hi: 'परोठा, चपाती, कप्सा, चावल, एग करी, सब्ज़ी, फिश करी, कांजी, फल' }
+                },
+                {
+                    id: 'SAT',
+                    accent: 'bg-sapphireLight',
+                    day: { ml: 'ശനി | SATURDAY', en: 'Saturday', ar: 'السبت', hi: 'शनिवार (Saturday)' },
+                    tab: { ml: 'ശനി', en: 'Sat', ar: 'السبت', hi: 'शनि' },
+                    b: { ml: 'ദോശ, ഇഡ്ഡലി, മക്രോണി, സാമ്പാർ, ചട്ണി', en: 'Dosa, Idli, Macaroni, Sambar, Chutney', ar: 'دوسا، إدلي، معكرونة، سامبار، شاتني', hi: 'डोसा, इडली, मैकरोनी, सांभर, चटनी' },
+                    l: { ml: 'സാദാ ചോറ്, പച്ചക്കറി, ഫിഷ് കറി, ഫിഷ് ഫ്രൈ, ഉപ്പേരി, പപ്പടം, അച്ചാർ', en: 'Rice, Veggies, Fish Curry, Fish Fry, Thoran, Pappadam, Pickle', ar: 'أرز، خضار، كاري سمك، سمك مقلي، ثوران، بابادام، مخلل', hi: 'चावल, सब्ज़ी, फिश करी, फिश फ्राई, उपेरी, पापड़, अचार' },
+                    d: { ml: 'പൊറോട്ട, ചപ്പാത്തി, സാദാ ചോറ്, നെയ്ച്ചോറ്, കഞ്ഞി, ചിക്കൻ കറി, പച്ചക്കറി, ഫിഷ് കറി, ഫ്രൂട്സ്', en: 'Porotta, Chapathi, Rice, Ghee Rice, Kanji, Chicken Curry, Veggies, Fish Curry, Fruits', ar: 'بوروتا، شباتي، أرز، أرز بالسمن، كانجي، كاري دجاج، خضار، سمك، فواكه', hi: 'परोठा, चपाती, चावल, घी राइस, कांजी, चिकन करी, सब्ज़ी, फिश करी, फल' }
+                },
+                {
+                    id: 'SUN',
+                    accent: 'bg-sapphire',
+                    day: { ml: 'ഞായർ | SUNDAY', en: 'Sunday', ar: 'الأحد', hi: 'रविवार (Sunday)' },
+                    tab: { ml: 'ഞായർ', en: 'Sun', ar: 'الأحد', hi: 'रवि' },
+                    b: { ml: 'നൂൽ പുട്ട്, ദോശ, ഉപ്പുമാവ്, മുട്ടക്കറി, ലിവർ കറി', en: 'Idiyappam, Dosa, Uppumavu, Egg Curry, Liver Curry', ar: 'إديابام، دوسا، أبومابو، كاري بيض، كبدة', hi: 'इडियप्पम, डोसा, उपमा, एग करी, लिवर करी' },
+                    l: { ml: 'സാദാ ചോറ്, ഉപ്പേരി, മീൻ കറി, രസം, സാമ്പാർ, മീൻ പൊരിച്ചത്, ചിക്കൻ പൊരിച്ചത്, പപ്പടം, അച്ചാർ', en: 'Rice, Thoran, Fish Curry, Rasam, Sambar, Fried Fish, Fried Chicken, Pappadam, Pickle', ar: 'أرز، خضار، كاري سمك، راسام، سامبار، سمك ودجاج مقلي، بابادام، مخلل', hi: 'चावल, उपेरी, फिश करी, रसम, सांभर, फ्राइड फिश व चिकन, पापड़, अचार' },
+                    d: { ml: 'പൊറോട്ട, ചപ്പാത്തി, കപ്സ, കഞ്ഞി, ചിക്കൻ ചില്ലി, ബീഫ് കറി, മീൻ കറി, പച്ചക്കറി, ഫ്രൂട്സ്', en: 'Porotta, Chapathi, Kabsa, Kanji, Chilli Chicken, Beef Curry, Fish Curry, Veggies, Fruits', ar: 'بوروتا، شباتي، كبسة، كانجي، دجاج حار، كاري لحم، سمك، خضار، فواكه', hi: 'परोठा, चपाती, कप्सा, कांजी, चिल्ली चिकन, बीफ करी, फिश करी, सब्ज़ी, फल' }
+                }
+            ];
+
+            const DEFAULT_REVIEWS = [
+                { id: 301, name: 'Abdul Rahim', service: 'Umrah Service', rating: 5, pinned: true, comment: 'Very smooth Umrah arrangements and polite coordination from start to finish.' },
+                { id: 302, name: 'Fathima N.', service: 'Visa Service', rating: 5, pinned: false, comment: 'Quick visa guidance and clear updates on every step.' },
+                { id: 303, name: 'Salman K.', service: 'Food Menu', rating: 5, pinned: false, comment: 'Homestyle weekly meals are always fresh and comforting.' }
+            ];
+
+            let updatesList = readStorage('faris_lux_updates', DEFAULT_UPDATES);
+            let ticketsList = readStorage('faris_lux_tickets', DEFAULT_TICKETS);
+            let weeklyMenuList = readStorage('faris_lux_food_menu', DEFAULT_WEEKLY_MENU);
+            let reviewsList = readStorage('faris_lux_reviews', DEFAULT_REVIEWS);
+            let customTextOverrides = readStorage('faris_lux_text_overrides', {});
+
+            /* ==================== TOAST NOTIFICATIONS ==================== */
+            function showToast(messageOrKey, isError) {
+                const container = document.getElementById('toast-container');
+                if (!container) return;
+                const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+                const text = dict[messageOrKey] || messageOrKey;
+                const toastEl = document.createElement('div');
+                toastEl.className = `px-4 py-3 rounded-2xl shadow-2xl text-xs sm:text-sm font-bold flex items-center gap-2.5 border ${
+                    isError
+                        ? 'bg-red-700 text-white border-red-300'
+                        : 'bg-sapphire text-champagne border-royalGold'
+                }`;
+                toastEl.innerHTML = `<i class="fa-solid ${isError ? 'fa-circle-exclamation' : 'fa-circle-check'} text-royalGold"></i><span>${escapeHtml(text)}</span>`;
+                container.appendChild(toastEl);
+                setTimeout(() => {
+                    toastEl.remove();
+                }, 2800);
+            }
+
+            /* ==================== STRICT ADMIN GUARD ==================== */
+            function ensureAdmin() {
+                if (isAdminAuthenticated === true) return true;
+                showToast('toast_admin_req', true);
+                openAdminLoginModal();
+                return false;
+            }
+
+            /* ==================== MODAL & DRAWER CONTROLS ==================== */
+            function closeMobileDrawer() {
+                const drawer = document.getElementById('mobile-nav-drawer');
+                const icon = document.getElementById('mobile-menu-icon');
+                if (drawer) drawer.classList.add('hidden');
+                if (icon) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            function toggleMobileDrawer() {
+                const drawer = document.getElementById('mobile-nav-drawer');
+                const icon = document.getElementById('mobile-menu-icon');
+                if (!drawer) return;
+                const willOpen = drawer.classList.contains('hidden');
+                drawer.classList.toggle('hidden', !willOpen);
+                if (icon) {
+                    icon.classList.toggle('fa-bars', !willOpen);
+                    icon.classList.toggle('fa-xmark', willOpen);
+                }
+            }
+
+            function openAdminLoginModal() {
+                closeMobileDrawer();
+                if (isAdminAuthenticated) {
+                    const ribbon = document.getElementById('admin-active-ribbon');
+                    if (ribbon) ribbon.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    showToast('toast_admin_ok', false);
+                    return;
+                }
+                const modal = document.getElementById('admin-login-modal');
+                const errBox = document.getElementById('admin-login-error-box');
+                if (errBox) {
+                    errBox.textContent = '';
+                    errBox.classList.add('hidden');
+                }
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        const userInput = document.getElementById('admin-username-input');
+                        if (userInput) userInput.focus();
+                    }, 50);
+                }
+            }
+
+            function closeAdminLoginModal() {
+                const modal = document.getElementById('admin-login-modal');
+                if (modal) modal.classList.add('hidden');
+            }
+
+            function performAdminLogout() {
+                isAdminAuthenticated = false;
+                writeStorage('faris_lux_admin_auth', false);
+                resetUpdateForm();
+                resetTicketForm();
+                syncAllUiState();
+                showToast('toast_admin_out', false);
+            }
+
+            /* ==================== ADMIN UI LOCKDOWN ==================== */
+            function syncAllUiState() {
+                const ribbon = document.getElementById('admin-active-ribbon');
+                const logoutBtn = document.getElementById('header-logout-btn');
+                const statusLabel = document.getElementById('header-admin-status-label');
+                const mobileAdminText = document.getElementById('mobile-bottom-admin-text');
+                const ticketAdminCol = document.getElementById('ticket-admin-column');
+                const ticketDisplayCol = document.getElementById('ticket-display-column');
+                const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+
+                document.querySelectorAll('.admin-only-btn, .admin-only-panel').forEach(el => {
+                    el.classList.toggle('hidden', !isAdminAuthenticated);
+                    if (isAdminAuthenticated && el.classList.contains('admin-only-btn')) {
+                        el.classList.add('inline-flex');
+                    } else if (!isAdminAuthenticated) {
+                        el.classList.remove('inline-flex');
+                    }
+                });
+
+                if (ribbon) ribbon.classList.toggle('hidden', !isAdminAuthenticated);
+                if (logoutBtn) {
+                    logoutBtn.classList.toggle('hidden', !isAdminAuthenticated);
+                    logoutBtn.classList.toggle('inline-flex', isAdminAuthenticated);
+                }
+                if (statusLabel) {
+                    statusLabel.textContent = isAdminAuthenticated ? dict.admin_ribbon_title : dict.admin_login_cta;
+                }
+                if (mobileAdminText) {
+                    mobileAdminText.textContent = isAdminAuthenticated ? 'Admin ✓' : 'Admin';
+                }
+
+                if (ticketAdminCol && ticketDisplayCol) {
+                    if (isAdminAuthenticated) {
+                        ticketAdminCol.classList.remove('hidden');
+                        ticketDisplayCol.classList.remove('lg:col-span-12');
+                        ticketDisplayCol.classList.add('lg:col-span-7');
+                    } else {
+                        ticketAdminCol.classList.add('hidden');
+                        ticketDisplayCol.classList.remove('lg:col-span-7');
+                        ticketDisplayCol.classList.add('lg:col-span-12');
+                    }
+                }
+
+                renderUpdates();
+                renderTickets();
+                renderFoodMenu();
+                renderReviews();
+            }
+
+            /* ==================== LANGUAGE SWITCHER ==================== */
+            function applyLanguage(langCode) {
+                if (!TRANSLATIONS[langCode]) langCode = 'ml';
+                currentLang = langCode;
+                writeStorage('faris_lux_lang', currentLang);
+
+                document.documentElement.lang = currentLang;
+                document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('is-active', btn.dataset.lang === currentLang);
+                });
+
+                const dict = TRANSLATIONS[currentLang];
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (dict[key] !== undefined) {
+                        el.textContent = dict[key];
+                    }
+                });
+
+                Object.keys(customTextOverrides).forEach(elId => {
+                    const targetEl = document.getElementById(elId);
+                    if (targetEl && customTextOverrides[elId]) {
+                        targetEl.textContent = customTextOverrides[elId];
+                    }
+                });
+
+                renderFoodTabs();
+                syncAllUiState();
+            }
+
+            /* ==================== UPDATES (ADMIN ADD / EDIT / DELETE) ==================== */
+            function resetUpdateForm() {
+                const form = document.getElementById('update-form');
+                const editId = document.getElementById('update-edit-id');
+                const cancelBtn = document.getElementById('cancel-update-edit-btn');
+                if (form) form.reset();
+                if (editId) editId.value = '';
+                if (cancelBtn) cancelBtn.classList.add('hidden');
+            }
+
+            function renderUpdates() {
+                const grid = document.getElementById('updates-grid');
+                if (!grid) return;
+                const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+
+                if (!updatesList.length) {
+                    grid.innerHTML = `<div class="col-span-full p-8 rounded-3xl bg-white border border-royalGold/30 text-center text-slate-500 text-sm font-semibold">${escapeHtml(dict.no_updates)}</div>`;
+                    return;
+                }
+
+                grid.innerHTML = updatesList.map(item => `
+                    <article class="rounded-3xl bg-white p-6 border border-royalGold/40 shadow-sm flex flex-col justify-between gap-4">
+                        <div class="space-y-2.5">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-3 py-1 rounded-full bg-sapphire text-champagne text-[11px] font-extrabold">${escapeHtml(item.category)}</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-royalGold/20 text-sapphire text-[11px] font-bold">${escapeHtml(item.badge || 'Update')}</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-sapphire leading-snug">${escapeHtml(item.title)}</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${escapeHtml(item.details)}</p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+                            <a href="tel:+966544672997" class="px-3.5 py-2.5 rounded-xl bg-sapphire hover:bg-sapphireLight text-champagne text-xs font-bold transition inline-flex items-center gap-1.5 min-h-[42px]">
+                                <i class="fa-solid fa-phone text-royalGold"></i>
+                                <span>${escapeHtml(dict.book_btn)}</span>
+                            </a>
+                            ${isAdminAuthenticated ? `
+                                <div class="flex items-center gap-1.5">
+                                    <button type="button" data-edit-update="${item.id}" class="px-3 py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 text-xs font-bold transition min-h-[40px]">
+                                        <i class="fa-solid fa-pen mr-1"></i>${escapeHtml(dict.edit_btn)}
+                                    </button>
+                                    <button type="button" data-delete-update="${item.id}" class="px-3 py-2 rounded-xl bg-red-100 hover:bg-red-200 text-red-700 text-xs font-bold transition min-h-[40px]">
+                                        <i class="fa-solid fa-trash mr-1"></i>${escapeHtml(dict.delete_btn)}
+                                    </button>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </article>
+                `).join('');
+            }
+
+            /* ==================== TICKETS & PACKAGES (ADMIN ADD / EDIT / DELETE) ==================== */
+            function resetTicketForm() {
+                const form = document.getElementById('ticket-form');
+                const editId = document.getElementById('ticket-edit-id');
+                const cancelBtn = document.getElementById('cancel-ticket-edit-btn');
+                if (form) form.reset();
+                if (editId) editId.value = '';
+                if (cancelBtn) cancelBtn.classList.add('hidden');
+            }
+
+            function renderTickets() {
+                const listEl = document.getElementById('ticket-list');
+                const badgeEl = document.getElementById('ticket-total-badge');
+                if (!listEl) return;
+                const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+                if (badgeEl) badgeEl.textContent = String(ticketsList.length);
+
+                if (!ticketsList.length) {
+                    listEl.innerHTML = `<div class="col-span-full p-8 rounded-3xl bg-white border border-royalGold/30 text-center text-slate-500 text-sm font-semibold">${escapeHtml(dict.no_tickets)}</div>`;
+                    return;
+                }
+
+                listEl.innerHTML = ticketsList.map(t => `
+                    <div class="rounded-2xl bg-white p-5 border border-royalGold/40 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="space-y-1">
+                            <div class="font-extrabold text-sm sm:text-base text-sapphire flex flex-wrap items-center gap-2">
+                                <span>${escapeHtml(t.from)}</span>
+                                <i class="fa-solid fa-arrow-right text-royalGold text-xs"></i>
+                                <span>${escapeHtml(t.to)}</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-2 text-xs">
+                                <span class="px-2.5 py-0.5 rounded-md bg-alabaster border border-royalGold/30 text-sapphire font-bold">${escapeHtml(t.type)}</span>
+                                ${t.note ? `<span class="text-slate-500">${escapeHtml(t.note)}</span>` : ''}
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between sm:justify-end gap-2 pt-2.5 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+                            <span class="font-extrabold text-base text-emeraldLux whitespace-nowrap">${escapeHtml(t.price)}</span>
+                            <a href="tel:+966544672997" class="px-3.5 py-2.5 rounded-xl bg-sapphire hover:bg-sapphireLight text-champagne text-xs font-bold transition min-h-[42px] inline-flex items-center">
+                                ${escapeHtml(dict.book_btn)}
+                            </a>
+                            ${isAdminAuthenticated ? `
+                                <button type="button" data-edit-ticket="${t.id}" aria-label="Edit Ticket" class="p-2.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 text-xs font-bold transition min-w-[42px] min-h-[42px]">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button type="button" data-delete-ticket="${t.id}" aria-label="Delete Ticket" class="p-2.5 rounded-xl bg-red-100 hover:bg-red-200 text-red-700 text-xs font-bold transition min-w-[42px] min-h-[42px]">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            /* ==================== WEEKLY FOOD MENU (MON-SUN) ==================== */
+            function renderFoodTabs() {
+                const tabsContainer = document.getElementById('food-day-tabs');
+                if (!tabsContainer) return;
+                const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+
+                const allBtnHtml = `
+                    <button type="button" data-food-day="ALL"
+                            class="px-4 py-2.5 rounded-xl text-xs font-extrabold transition min-h-[42px] ${
+                                activeFoodDay === 'ALL'
+                                    ? 'bg-sapphire text-champagne border border-royalGold shadow'
+                                    : 'bg-white text-sapphire border border-slate-300 hover:border-royalGold'
+                            }">${escapeHtml(dict.all_days)}</button>
+                `;
+
+                const dayBtnsHtml = weeklyMenuList.map(d => `
+                    <button type="button" data-food-day="${d.id}"
+                            class="px-4 py-2.5 rounded-xl text-xs font-extrabold transition min-h-[42px] ${
+                                activeFoodDay === d.id
+                                    ? 'bg-sapphire text-champagne border border-royalGold shadow'
+                                    : 'bg-white text-sapphire border border-slate-300 hover:border-royalGold'
+                            }">${escapeHtml(d.tab[currentLang] || d.tab.en)}</button>
+                `).join('');
+
+                tabsContainer.innerHTML = allBtnHtml + dayBtnsHtml;
+            }
+
+            function renderFoodMenu() {
+                const cardsGrid = document.getElementById('food-cards-grid');
+                if (!cardsGrid) return;
+                const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+
+                const visibleDays = activeFoodDay === 'ALL'
+                    ? weeklyMenuList
+                    : weeklyMenuList.filter(item => item.id === activeFoodDay);
+
+                cardsGrid.innerHTML = visibleDays.map(item => `
+                    <div class="rounded-3xl bg-white overflow-hidden border border-royalGold/40 shadow-sm flex flex-col">
+                        <div class="${item.accent} text-white px-5 py-3.5 flex items-center justify-between gap-2">
+                            <span class="font-extrabold text-sm">${escapeHtml(item.day[currentLang] || item.day.en)}</span>
+                            ${isAdminAuthenticated ? `
+                                <button type="button" data-edit-food="${item.id}" class="px-3 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-xs font-extrabold transition min-h-[36px]">
+                                    <i class="fa-solid fa-pen mr-1"></i>${escapeHtml(dict.edit_btn)}
+                                </button>
+                            ` : `<i class="fa-solid fa-utensils opacity-80"></i>`}
+                        </div>
+                        <div class="p-5 space-y-3 text-xs sm:text-sm flex-1">
+                            <div class="flex items-start gap-2.5">
+                                <span class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-900 font-extrabold text-[11px] shrink-0">${escapeHtml(dict.breakfast)}</span>
+                                <p class="text-slate-700 leading-relaxed">${escapeHtml(item.b[currentLang] || item.b.en)}</p>
+                            </div>
+                            <div class="pt-2.5 border-t border-slate-100 flex items-start gap-2.5">
+                                <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-900 font-extrabold text-[11px] shrink-0">${escapeHtml(dict.lunch)}</span>
+                                <p class="text-slate-700 leading-relaxed">${escapeHtml(item.l[currentLang] || item.l.en)}</p>
+                            </div>
+                            <div class="pt-2.5 border-t border-slate-100 flex items-start gap-2.5">
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-sapphire font-extrabold text-[11px] shrink-0">${escapeHtml(dict.dinner)}</span>
+                                <p class="text-slate-700 leading-relaxed">${escapeHtml(item.d[currentLang] || item.d.en)}</p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            /* ==================== CUSTOMER REVIEWS ==================== */
+            function renderStars(count) {
+                const safeCount = Math.max(1, Math.min(5, Number(count) || 5));
+                let out = '';
+                for (let i = 1; i <= 5; i++) {
+                    out += i <= safeCount
+                        ? '<i class="fa-solid fa-star text-royalGold"></i>'
+                        : '<i class="fa-regular fa-star text-slate-300"></i>';
+                }
+                return out;
+            }
+
+            function renderReviews() {
+                const listEl = document.getElementById('reviews-list');
+                const badgeEl = document.getElementById('review-total-badge');
+                if (!listEl) return;
+                const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+                if (badgeEl) badgeEl.textContent = String(reviewsList.length);
+
+                const sorted = [...reviewsList].sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
+                listEl.innerHTML = sorted.map(r => {
+                    const initials = (r.name || 'U').trim().slice(0, 2).toUpperCase();
+                    return `
+                        <div class="rounded-2xl bg-white p-5 border ${r.pinned ? 'border-royalGold ring-2 ring-royalGold/30' : 'border-slate-200'} shadow-sm flex flex-col justify-between gap-3">
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between gap-2">
+                                    <div class="text-xs flex items-center gap-1.5">
+                                        ${renderStars(r.rating)}
+                                        ${r.pinned ? '<span class="px-2 py-0.5 rounded bg-royalGold/20 text-sapphire text-[10px] font-extrabold"><i class="fa-solid fa-thumbtack mr-1"></i>Pinned</span>' : ''}
+                                    </div>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-alabaster text-sapphire text-[11px] font-bold">${escapeHtml(r.service)}</span>
+                                </div>
+                                <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">"${escapeHtml(r.comment)}"</p>
+                            </div>
+                            <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between gap-2">
+                                <div class="flex items-center gap-2.5">
+                                    <span class="w-8 h-8 rounded-full bg-sapphire text-champagne text-xs font-extrabold flex items-center justify-center shrink-0">${escapeHtml(initials)}</span>
+                                    <span class="text-xs sm:text-sm font-extrabold text-sapphire">${escapeHtml(r.name)}</span>
+                                </div>
+                                ${isAdminAuthenticated ? `
+                                    <div class="flex items-center gap-1">
+                                        <button type="button" data-pin-review="${r.id}" class="px-2.5 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 text-xs font-bold transition min-h-[38px]">
+                                            <i class="fa-solid fa-thumbtack mr-1"></i>${escapeHtml(dict.pin_btn)}
+                                        </button>
+                                        <button type="button" data-delete-review="${r.id}" class="px-2.5 py-1.5 rounded-xl bg-red-100 hover:bg-red-200 text-red-700 text-xs font-bold transition min-h-[38px]">
+                                            <i class="fa-solid fa-trash mr-1"></i>${escapeHtml(dict.delete_btn)}
+                                        </button>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            /* ==================== ADMIN EDITOR MODAL (HIGHLIGHTS / ABOUT / FOOD) ==================== */
+            function openEditorModal(mode, targetKey) {
+                if (!ensureAdmin()) return;
+                const modal = document.getElementById('admin-editor-modal');
+                const heading = document.getElementById('editor-modal-heading');
+                const fields = document.getElementById('editor-dynamic-fields');
+                document.getElementById('editor-mode').value = mode;
+                document.getElementById('editor-target-key').value = targetKey || '';
+
+                if (mode === 'highlight') {
+                    const isUmrah = targetKey === 'umrah';
+                    heading.textContent = isUmrah ? 'Edit Umrah Service Highlight' : 'Edit Visa Service Highlight';
+                    const badgeVal = document.getElementById(`${targetKey}-badge-text`).textContent;
+                    const titleVal = document.getElementById(`${targetKey}-card-title`).textContent;
+                    const descVal = document.getElementById(`${targetKey}-card-desc`).textContent;
+                    const pt1Val = document.getElementById(`${targetKey}-pt-1`).textContent;
+                    const pt2Val = document.getElementById(`${targetKey}-pt-2`).textContent;
+                    const pt3Val = document.getElementById(`${targetKey}-pt-3`).textContent;
+
+                    fields.innerHTML = `
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Badge Label</label>
+                            <input type="text" id="ed-hl-badge" value="${escapeHtml(badgeVal)}" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm font-semibold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Heading</label>
+                            <input type="text" id="ed-hl-title" value="${escapeHtml(titleVal)}" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Description</label>
+                            <textarea id="ed-hl-desc" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm">${escapeHtml(descVal)}</textarea>
+                        </div>
+                        <input type="text" id="ed-hl-pt1" value="${escapeHtml(pt1Val)}" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs">
+                        <input type="text" id="ed-hl-pt2" value="${escapeHtml(pt2Val)}" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs">
+                        <input type="text" id="ed-hl-pt3" value="${escapeHtml(pt3Val)}" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs">
+                    `;
+                } else if (mode === 'about') {
+                    heading.textContent = 'Edit About Section';
+                    const aboutTitle = document.getElementById('about-heading').textContent;
+                    const aboutBody = document.getElementById('about-body').textContent;
+                    fields.innerHTML = `
+                        <div>
+                            <label class="block text-xs font-bold mb-1">About Heading</label>
+                            <input type="text" id="ed-about-title" value="${escapeHtml(aboutTitle)}" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-1">About Description</label>
+                            <textarea id="ed-about-body" rows="4" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm">${escapeHtml(aboutBody)}</textarea>
+                        </div>
+                    `;
+                } else if (mode === 'food') {
+                    const dayObj = weeklyMenuList.find(d => d.id === targetKey);
+                    if (!dayObj) return;
+                    heading.textContent = `Edit Food Menu (${dayObj.day[currentLang] || dayObj.day.en})`;
+                    fields.innerHTML = `
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Morning</label>
+                            <textarea id="ed-food-b" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm">${escapeHtml(dayObj.b[currentLang] || dayObj.b.en)}</textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Afternoon</label>
+                            <textarea id="ed-food-l" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm">${escapeHtml(dayObj.l[currentLang] || dayObj.l.en)}</textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Night</label>
+                            <textarea id="ed-food-d" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm">${escapeHtml(dayObj.d[currentLang] || dayObj.d.en)}</textarea>
+                        </div>
+                    `;
+                }
+
+                modal.classList.remove('hidden');
+            }
+
+            function closeEditorModal() {
+                const modal = document.getElementById('admin-editor-modal');
+                if (modal) modal.classList.add('hidden');
+            }
+
+            /* ==================== EVENT BINDING (TOUCH + CLICK RELIABLE) ==================== */
+            function bindEvents() {
+                // Language buttons
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        applyLanguage(this.dataset.lang);
+                    });
+                });
+
+                // Mobile drawer toggle & link auto-close
+                const menuBtn = document.getElementById('mobile-menu-btn');
+                if (menuBtn) {
+                    menuBtn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        toggleMobileDrawer();
+                    });
+                }
+                document.querySelectorAll('[data-close-drawer]').forEach(link => {
+                    link.addEventListener('click', function () {
+                        closeMobileDrawer();
+                    });
+                });
+
+                // Open Admin Modal triggers
+                document.querySelectorAll('[data-open-admin-modal]').forEach(btn => {
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        openAdminLoginModal();
+                    });
+                });
+
+                // Logout triggers
+                document.querySelectorAll('[data-admin-logout]').forEach(btn => {
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        performAdminLogout();
+                    });
+                });
+
+                // Close Admin Modal & Backdrop click
+                const adminModal = document.getElementById('admin-login-modal');
+                const closeAdminBtn = document.getElementById('close-admin-login-btn');
+                if (closeAdminBtn) closeAdminBtn.addEventListener('click', closeAdminLoginModal);
+                if (adminModal) {
+                    adminModal.addEventListener('click', function (e) {
+                        if (e.target === adminModal) closeAdminLoginModal();
+                    });
+                }
+
+                // Toggle Password visibility
+                const togglePwdBtn = document.getElementById('toggle-password-vis-btn');
+                if (togglePwdBtn) {
+                    togglePwdBtn.addEventListener('click', function () {
+                        const input = document.getElementById('admin-password-input');
+                        const icon = document.getElementById('password-vis-icon');
+                        if (!input) return;
+                        const isPwd = input.type === 'password';
+                        input.type = isPwd ? 'text' : 'password';
+                        if (icon) {
+                            icon.classList.toggle('fa-eye', !isPwd);
+                            icon.classList.toggle('fa-eye-slash', isPwd);
+                        }
+                    });
+                }
+
+                // Admin Login Submit
+                const adminLoginForm = document.getElementById('admin-login-form');
+                if (adminLoginForm) {
+                    adminLoginForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const userVal = (document.getElementById('admin-username-input').value || '').trim();
+                        const passVal = (document.getElementById('admin-password-input').value || '').trim();
+                        const errBox = document.getElementById('admin-login-error-box');
+                        const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+
+                        if (userVal === ADMIN_USERNAME && passVal === ADMIN_PASSWORD) {
+                            isAdminAuthenticated = true;
+                            writeStorage('faris_lux_admin_auth', true);
+                            adminLoginForm.reset();
+                            closeAdminLoginModal();
+                            syncAllUiState();
+                            showToast('toast_admin_ok', false);
+                        } else if (errBox) {
+                            errBox.textContent = dict.toast_admin_err;
+                            errBox.classList.remove('hidden');
+                            showToast('toast_admin_err', true);
+                        }
+                    });
+                }
+
+                // Admin Section Action Buttons
+                document.querySelectorAll('[data-admin-action]').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        if (!ensureAdmin()) return;
+                        const action = this.dataset.adminAction;
+                        const target = this.dataset.target;
+                        if (action === 'edit-highlight') {
+                            openEditorModal('highlight', target);
+                        } else if (action === 'edit-about') {
+                            openEditorModal('about', 'about');
+                        } else if (action === 'focus-update-form') {
+                            const panel = document.getElementById('update-admin-panel');
+                            if (panel) {
+                                panel.classList.remove('hidden');
+                                panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        } else if (action === 'focus-ticket-form') {
+                            const col = document.getElementById('ticket-admin-column');
+                            if (col) {
+                                col.classList.remove('hidden');
+                                col.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }
+                    });
+                });
+
+                // Editor Modal Close / Backdrop / Submit
+                const editorModal = document.getElementById('admin-editor-modal');
+                const closeEditorBtn = document.getElementById('close-editor-modal-btn');
+                const cancelEditorBtn = document.getElementById('cancel-editor-modal-btn');
+                if (closeEditorBtn) closeEditorBtn.addEventListener('click', closeEditorModal);
+                if (cancelEditorBtn) cancelEditorBtn.addEventListener('click', closeEditorModal);
+                if (editorModal) {
+                    editorModal.addEventListener('click', function (e) {
+                        if (e.target === editorModal) closeEditorModal();
+                    });
+                }
+
+                const editorForm = document.getElementById('admin-editor-form');
+                if (editorForm) {
+                    editorForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        if (!ensureAdmin()) return;
+                        const mode = document.getElementById('editor-mode').value;
+                        const key = document.getElementById('editor-target-key').value;
+
+                        if (mode === 'highlight') {
+                            customTextOverrides[`${key}-badge-text`] = document.getElementById('ed-hl-badge').value.trim();
+                            customTextOverrides[`${key}-card-title`] = document.getElementById('ed-hl-title').value.trim();
+                            customTextOverrides[`${key}-card-desc`] = document.getElementById('ed-hl-desc').value.trim();
+                            customTextOverrides[`${key}-pt-1`] = document.getElementById('ed-hl-pt1').value.trim();
+                            customTextOverrides[`${key}-pt-2`] = document.getElementById('ed-hl-pt2').value.trim();
+                            customTextOverrides[`${key}-pt-3`] = document.getElementById('ed-hl-pt3').value.trim();
+                            writeStorage('faris_lux_text_overrides', customTextOverrides);
+                            applyLanguage(currentLang);
+                        } else if (mode === 'about') {
+                            customTextOverrides['about-heading'] = document.getElementById('ed-about-title').value.trim();
+                            customTextOverrides['about-body'] = document.getElementById('ed-about-body').value.trim();
+                            writeStorage('faris_lux_text_overrides', customTextOverrides);
+                            applyLanguage(currentLang);
+                        } else if (mode === 'food') {
+                            const idx = weeklyMenuList.findIndex(d => d.id === key);
+                            if (idx !== -1) {
+                                weeklyMenuList[idx].b[currentLang] = document.getElementById('ed-food-b').value.trim();
+                                weeklyMenuList[idx].l[currentLang] = document.getElementById('ed-food-l').value.trim();
+                                weeklyMenuList[idx].d[currentLang] = document.getElementById('ed-food-d').value.trim();
+                                writeStorage('faris_lux_food_menu', weeklyMenuList);
+                                renderFoodMenu();
+                            }
+                        }
+                        closeEditorModal();
+                        showToast('toast_saved', false);
+                    });
+                }
+
+                // Update Form Submit & Delegated Edit/Delete
+                const updateForm = document.getElementById('update-form');
+                const cancelUpdateEditBtn = document.getElementById('cancel-update-edit-btn');
+                if (cancelUpdateEditBtn) cancelUpdateEditBtn.addEventListener('click', resetUpdateForm);
+
+                if (updateForm) {
+                    updateForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        if (!ensureAdmin()) return;
+                        const editId = document.getElementById('update-edit-id').value;
+                        const category = document.getElementById('update-category').value;
+                        const title = document.getElementById('update-headline').value.trim();
+                        const badge = document.getElementById('update-badge').value.trim() || 'New';
+                        const details = document.getElementById('update-details').value.trim();
+                        if (!title || !details) return;
+
+                        if (editId) {
+                            updatesList = updatesList.map(u => u.id === Number(editId) ? { ...u, category, title, badge, details } : u);
+                        } else {
+                            updatesList.unshift({ id: Date.now(), category, title, badge, details });
+                        }
+                        writeStorage('faris_lux_updates', updatesList);
+                        resetUpdateForm();
+                        renderUpdates();
+                        showToast('toast_saved', false);
+                    });
+                }
+
+                const updatesGrid = document.getElementById('updates-grid');
+                if (updatesGrid) {
+                    updatesGrid.addEventListener('click', function (e) {
+                        const editBtn = e.target.closest('[data-edit-update]');
+                        const delBtn = e.target.closest('[data-delete-update]');
+                        if (editBtn) {
+                            if (!ensureAdmin()) return;
+                            const id = Number(editBtn.dataset.editUpdate);
+                            const found = updatesList.find(u => u.id === id);
+                            if (!found) return;
+                            document.getElementById('update-edit-id').value = found.id;
+                            document.getElementById('update-category').value = found.category;
+                            document.getElementById('update-headline').value = found.title;
+                            document.getElementById('update-badge').value = found.badge || '';
+                            document.getElementById('update-details').value = found.details;
+                            if (cancelUpdateEditBtn) cancelUpdateEditBtn.classList.remove('hidden');
+                            const panel = document.getElementById('update-admin-panel');
+                            if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        } else if (delBtn) {
+                            if (!ensureAdmin()) return;
+                            const id = Number(delBtn.dataset.deleteUpdate);
+                            updatesList = updatesList.filter(u => u.id !== id);
+                            writeStorage('faris_lux_updates', updatesList);
+                            renderUpdates();
+                            showToast('toast_deleted', false);
+                        }
+                    });
+                }
+
+                // Ticket Form Submit & Delegated Edit/Delete
+                const ticketForm = document.getElementById('ticket-form');
+                const cancelTicketEditBtn = document.getElementById('cancel-ticket-edit-btn');
+                if (cancelTicketEditBtn) cancelTicketEditBtn.addEventListener('click', resetTicketForm);
+
+                if (ticketForm) {
+                    ticketForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        if (!ensureAdmin()) return;
+                        const editId = document.getElementById('ticket-edit-id').value;
+                        const from = document.getElementById('ticket-from').value.trim();
+                        const to = document.getElementById('ticket-to').value.trim();
+                        const type = document.getElementById('ticket-type').value.trim();
+                        const price = document.getElementById('ticket-price').value.trim();
+                        const note = document.getElementById('ticket-note').value.trim();
+                        if (!from || !to || !type || !price) return;
+
+                        if (editId) {
+                            ticketsList = ticketsList.map(t => t.id === Number(editId) ? { ...t, from, to, type, price, note } : t);
+                        } else {
+                            ticketsList.unshift({ id: Date.now(), from, to, type, price, note });
+                        }
+                        writeStorage('faris_lux_tickets', ticketsList);
+                        resetTicketForm();
+                        renderTickets();
+                        showToast('toast_saved', false);
+                    });
+                }
+
+                const ticketListEl = document.getElementById('ticket-list');
+                if (ticketListEl) {
+                    ticketListEl.addEventListener('click', function (e) {
+                        const editBtn = e.target.closest('[data-edit-ticket]');
+                        const delBtn = e.target.closest('[data-delete-ticket]');
+                        if (editBtn) {
+                            if (!ensureAdmin()) return;
+                            const id = Number(editBtn.dataset.editTicket);
+                            const found = ticketsList.find(t => t.id === id);
+                            if (!found) return;
+                            document.getElementById('ticket-edit-id').value = found.id;
+                            document.getElementById('ticket-from').value = found.from;
+                            document.getElementById('ticket-to').value = found.to;
+                            document.getElementById('ticket-type').value = found.type;
+                            document.getElementById('ticket-price').value = found.price;
+                            document.getElementById('ticket-note').value = found.note || '';
+                            if (cancelTicketEditBtn) cancelTicketEditBtn.classList.remove('hidden');
+                            const col = document.getElementById('ticket-admin-column');
+                            if (col) col.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        } else if (delBtn) {
+                            if (!ensureAdmin()) return;
+                            const id = Number(delBtn.dataset.deleteTicket);
+                            ticketsList = ticketsList.filter(t => t.id !== id);
+                            writeStorage('faris_lux_tickets', ticketsList);
+                            renderTickets();
+                            showToast('toast_deleted', false);
+                        }
+                    });
+                }
+
+                // Food Day Tabs & Admin Food Edit
+                const dayTabsEl = document.getElementById('food-day-tabs');
+                if (dayTabsEl) {
+                    dayTabsEl.addEventListener('click', function (e) {
+                        const dayBtn = e.target.closest('[data-food-day]');
+                        if (!dayBtn) return;
+                        activeFoodDay = dayBtn.dataset.foodDay;
+                        renderFoodTabs();
+                        renderFoodMenu();
+                    });
+                }
+
+                const foodCardsGrid = document.getElementById('food-cards-grid');
+                if (foodCardsGrid) {
+                    foodCardsGrid.addEventListener('click', function (e) {
+                        const editFoodBtn = e.target.closest('[data-edit-food]');
+                        if (!editFoodBtn) return;
+                        openEditorModal('food', editFoodBtn.dataset.editFood);
+                    });
+                }
+
+                // Review Form Submit & Admin Pin/Delete
+                const reviewForm = document.getElementById('review-form');
+                if (reviewForm) {
+                    reviewForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const name = document.getElementById('review-name').value.trim();
+                        const service = document.getElementById('review-service').value;
+                        const rating = Number(document.getElementById('review-rating').value) || 5;
+                        const comment = document.getElementById('review-comment').value.trim();
+                        if (!name || !comment) return;
+
+                        reviewsList.unshift({
+                            id: Date.now(),
+                            name,
+                            service,
+                            rating,
+                            pinned: false,
+                            comment
+                        });
+                        writeStorage('faris_lux_reviews', reviewsList);
+                        reviewForm.reset();
+                        renderReviews();
+                        showToast('toast_review_ok', false);
+                    });
+                }
+
+                const reviewsListEl = document.getElementById('reviews-list');
+                if (reviewsListEl) {
+                    reviewsListEl.addEventListener('click', function (e) {
+                        const pinBtn = e.target.closest('[data-pin-review]');
+                        const delBtn = e.target.closest('[data-delete-review]');
+                        if (pinBtn) {
+                            if (!ensureAdmin()) return;
+                            const id = Number(pinBtn.dataset.pinReview);
+                            reviewsList = reviewsList.map(r => r.id === id ? { ...r, pinned: !r.pinned } : r);
+                            writeStorage('faris_lux_reviews', reviewsList);
+                            renderReviews();
+                            showToast('toast_saved', false);
+                        } else if (delBtn) {
+                            if (!ensureAdmin()) return;
+                            const id = Number(delBtn.dataset.deleteReview);
+                            reviewsList = reviewsList.filter(r => r.id !== id);
+                            writeStorage('faris_lux_reviews', reviewsList);
+                            renderReviews();
+                            showToast('toast_deleted', false);
+                        }
+                    });
+                }
+            }
+
+            /* ==================== INITIALIZE ==================== */
+            const yearEl = document.getElementById('footer-year');
+            if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+            bindEvents();
+            applyLanguage(currentLang);
+        })();
+    </script>
+</body>
+</html>
